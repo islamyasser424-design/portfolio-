@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Islam Yasser — Junior Data Analyst based in Egypt. Specializing in Power BI, Excel, Relational Data Modeling, Data Quality, and Operational Analytics.">
+  <meta name="keywords" content="Islam Yasser, Data Analyst, Junior Data Analyst, Power BI, Excel, DAX, SQL, Python, Egypt, Portfolio, Data Quality, WFM">
+  <meta name="author" content="Islam Yasser">
+  <title>Islam Yasser | Junior Data Analyst Portfolio</title>
+  
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Favicon SVG inline data uri -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23090d16'/%3E%3Cpath d='M8 22V16M14 22V10M20 22V14M26 22V8' stroke='%2306b6d4' stroke-width='2.5' stroke-linecap='round'/%3E%3Ccircle cx='26' cy='8' r='2' fill='%233b82f6'/%3E%3C/svg%3E">
+</head>
+<body>
+  <!-- Header & Sticky Navbar -->
+  <header class="header" id="header">
+    <nav class="navbar container" aria-label="Main Navigation">
+      <a href="#hero" class="brand-logo" aria-label="Islam Yasser Portfolio Home">
+        <span class="logo-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 3v18h18" />
+            <path d="m19 9-5 5-4-4-3 3" />
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong class="brand-name">Islam Yasser</strong>
+          <span class="brand-tag">Data Analyst</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item"><a href="#hero" class="nav-link active">Home</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+        <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+        <li class="nav-item"><a href="#workflow" class="nav-link">Workflow</a></li>
+        <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+        <li class="nav-item"><a href="#objective" class="nav-link">Objective</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Controls: Theme Toggle & Mobile Hamburger -->
+      <div class="nav-actions">
+        <button id="themeToggle" class="theme-toggle-btn" type="button" aria-label="Toggle theme" title="Toggle Light/Dark Theme">
+          <!-- Sun Icon (shown in dark mode) -->
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2" />
+            <path d="M12 20v2" />
+            <path d="m4.93 4.93 1.41 1.41" />
+            <path d="m17.66 17.66 1.41 1.41" />
+            <path d="M2 12h2" />
+            <path d="M20 12h2" />
+            <path d="m6.34 17.66-1.41 1.41" />
+            <path d="m19.07 4.93-1.41 1.41" />
+          </svg>
+          <!-- Moon Icon (shown in light mode) -->
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+          </svg>
+        </button>
+
+        <button id="menuToggle" class="menu-toggle-btn" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Open Navigation Menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
+  </header>
+
+  <main id="mainContent">
+    <!-- SECTION 1: HERO -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-grid" aria-hidden="true"></div>
+      <div class="container hero-container">
+        
+        <div class="hero-content reveal-on-scroll">
+          <div class="status-badge">
+            <img src="img/islam-yasser.jpg" alt="Islam Yasser" class="mini-avatar" width="24" height="24">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            <span>Junior Data Analyst • Egypt</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="text-gradient">Islam Yasser</span>
+          </h1>
+
+          <p class="hero-headline">
+            Turning data into meaningful insights through analysis, visualization, and data-driven problem solving.
+          </p>
+
+          <p class="hero-description">
+            Junior Data Analyst bringing real operational discipline in data quality assurance, annotation workflows, workload assignment, and performance monitoring, connected to analytical project work in Power BI, Microsoft Excel, relational databases (SQL / MySQL), and dimensional data modeling.
+          </p>
+
+          <!-- Quick Highlights Strip -->
+          <div class="hero-highlights">
+            <div class="highlight-pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Cairo, Egypt</span>
+            </div>
+            <div class="highlight-pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>Data Quality &amp; Operations</span>
+            </div>
+            <div class="highlight-pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+              <span>SQL &amp; Relational Databases</span>
+            </div>
+            <div class="highlight-pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+              <span>Helwan University (2025)</span>
+            </div>
+            <div class="highlight-pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
+              <span>5 Verified BI Projects</span>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <span>View Projects</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Contact Me</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+            <a href="mailto:islamyasser424@gmail.com?subject=Islam%20Yasser%20Resume%20Request" class="btn btn-outline" title="Request or Download Resume / CV">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Resume / CV</span>
+            </a>
+            <div class="social-quick-links">
+              <a href="https://github.com/islamyasser424-design" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub Profile (opens in a new tab)" title="GitHub Profile">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/islam-yasser-55048b378/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn Profile (opens in a new tab)" title="LinkedIn Profile">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c.99 0 1.8-.81 1.8-1.8 0-.98-.81-1.79-1.8-1.79-.99 0-1.8.81-1.8 1.79 0 .99.81 1.8 1.8 1.8m1.4 9.74v-8.37H5.06v8.37h2.8Z"/></svg>
+              </a>
+              <a href="mailto:islamyasser424@gmail.com" class="social-link" aria-label="Email Islam Yasser" title="islamyasser424@gmail.com">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Interactive Visual: Analytical Dashboard Mockup -->
+        <div class="hero-visual reveal-on-scroll">
+          <div class="dashboard-mockup glass-card">
+            <!-- Window Header -->
+            <div class="mockup-header">
+              <div class="mockup-dots" aria-hidden="true">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="mockup-title-tab">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+                <span>Operational_Analytics_V2.pbix</span>
+              </div>
+              <div class="mockup-status-badge">
+                <span class="mini-pulse"></span>
+                <span>Active Model</span>
+              </div>
+            </div>
+
+            <!-- DAX Formula Bar -->
+            <div class="dax-bar">
+              <span class="dax-fx" aria-hidden="true">fx</span>
+              <code class="dax-code" title="DAX Measure Formula">Late_Delivery_Leakage = CALCULATE(SUM(Orders[Revenue]), Orders[DeliveryDelayDays] &gt; 0, Orders[OrderStatus] = "Delivered")</code>
+            </div>
+
+            <!-- KPI Metric Grid inside Mockup -->
+            <div class="mockup-metrics">
+              <div class="metric-card">
+                <span class="metric-label">Orders Audited</span>
+                <div class="metric-value-row">
+                  <span class="metric-number text-cyan">99,441</span>
+                  <span class="metric-pill pill-up">+100% Star Schema</span>
+                </div>
+                <span class="metric-sub">Olist E-Commerce Project</span>
+              </div>
+
+              <div class="metric-card">
+                <span class="metric-label">Financial Analyzed</span>
+                <div class="metric-value-row">
+                  <span class="metric-number text-blue">$2.29M</span>
+                  <span class="metric-pill pill-neutral">9,994 Rows</span>
+                </div>
+                <span class="metric-sub">SuperStore BI Dashboard</span>
+              </div>
+
+              <div class="metric-card">
+                <span class="metric-label">Operational Quality</span>
+                <div class="metric-value-row">
+                  <span class="metric-number text-emerald">99.4%</span>
+                  <span class="metric-pill pill-emerald">QA Benchmark</span>
+                </div>
+                <span class="metric-sub">Multimodal Annotation QA</span>
+              </div>
+
+              <div class="metric-card">
+                <span class="metric-label">Interactive Reports</span>
+                <div class="metric-value-row">
+                  <span class="metric-number text-amber">9 Pages</span>
+                  <span class="metric-pill pill-blue">What-If Scenarios</span>
+                </div>
+                <span class="metric-sub">Logistics Vision Fleet Model</span>
+              </div>
+            </div>
+
+            <!-- SVG Data Chart Visualization -->
+            <div class="mockup-chart-area">
+              <div class="chart-header">
+                <span class="chart-title">Revenue & SLA Delivery Variance (Monthly Trend)</span>
+                <div class="chart-legend">
+                  <span class="legend-item"><span class="legend-dot dot-cyan"></span> Delivered On-Time</span>
+                  <span class="legend-item"><span class="legend-dot dot-amber"></span> Delayed SLA</span>
+                </div>
+              </div>
+              <div class="svg-chart-container">
+                <svg viewBox="0 0 500 140" class="analytics-sparkline" preserveAspectRatio="none" aria-label="Analytical trend visualization chart" role="img">
+                  <defs>
+                    <linearGradient id="cyanGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.45" />
+                      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.0" />
+                    </linearGradient>
+                    <linearGradient id="blueGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.3" />
+                      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.0" />
+                    </linearGradient>
+                  </defs>
+                  <!-- Horizontal Grid Lines -->
+                  <line x1="0" y1="20" x2="500" y2="20" stroke="currentColor" stroke-opacity="0.08" stroke-dasharray="4 4" />
+                  <line x1="0" y1="60" x2="500" y2="60" stroke="currentColor" stroke-opacity="0.08" stroke-dasharray="4 4" />
+                  <line x1="0" y1="100" x2="500" y2="100" stroke="currentColor" stroke-opacity="0.08" stroke-dasharray="4 4" />
+                  
+                  <!-- Area Fill -->
+                  <polygon points="0,120 0,85 50,75 100,80 150,55 200,60 250,35 300,45 350,25 400,30 450,15 500,20 500,120" fill="url(#cyanGrad)" />
+                  
+                  <!-- Main Cyan Trendline -->
+                  <polyline points="0,85 50,75 100,80 150,55 200,60 250,35 300,45 350,25 400,30 450,15 500,20" fill="none" stroke="#06b6d4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                  
+                  <!-- Secondary SLA Warning Line -->
+                  <polyline points="0,110 50,105 100,102 150,95 200,90 250,82 300,80 350,70 400,65 450,58 500,52" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-dasharray="4 3" stroke-linecap="round" />
+
+                  <!-- Highlighting Data Points -->
+                  <circle cx="250" cy="35" r="4.5" fill="#06b6d4" stroke="#090d16" stroke-width="2" />
+                  <circle cx="450" cy="15" r="4.5" fill="#06b6d4" stroke="#090d16" stroke-width="2" />
+                  <circle cx="500" cy="20" r="5" fill="#10b981" stroke="#090d16" stroke-width="2" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Card Bottom Bar: Quick Filter Slices -->
+            <div class="mockup-footer">
+              <span class="filter-tag active-tag">All Channels</span>
+              <span class="filter-tag">Dimension: Star Schema</span>
+              <span class="filter-tag">Metric: Delivered</span>
+              <span class="filter-status">Auto-refreshed via Power Query</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: ABOUT ME -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <div class="section-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            <span>Background & Positioning</span>
+          </div>
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">A Junior Data Analyst combining operational discipline with business intelligence & data modeling.</p>
+        </div>
+
+        <div class="about-grid">
+          
+          <!-- Left Column: Profile Card -->
+          <div class="about-profile-card glass-card reveal-on-scroll">
+            <div class="avatar-wrapper" id="profileAvatarWrapper">
+              <!-- Animated Glowing Tech Aura -->
+              <div class="avatar-aura-ring" aria-hidden="true"></div>
+              
+              <!-- Main Photo Frame -->
+              <div class="avatar-frame">
+                <img src="img/islam-yasser.jpg" alt="Islam Yasser — Junior Data Analyst" class="profile-photo" width="170" height="170" loading="eager">
+                <div class="avatar-shine-sweep" aria-hidden="true"></div>
+              </div>
+
+              <!-- Verified Badge -->
+              <div class="avatar-verified-badge" title="Verified Junior Data Analyst">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+
+              <!-- Dynamic Floating Badge 1 (Top-Right) -->
+              <div class="avatar-floating-badge badge-top-right" title="Operational Data Quality & QA">
+                <span class="badge-icon-wrap text-cyan">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </span>
+                <span>Data Quality QA</span>
+              </div>
+
+              <!-- Dynamic Floating Badge 2 (Bottom-Left) -->
+              <div class="avatar-floating-badge badge-bottom-left" title="Power BI & Excel Modeling">
+                <span class="badge-icon-wrap text-emerald">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                </span>
+                <span>Power BI &amp; Excel</span>
+              </div>
+            </div>
+
+            <h3 class="profile-name">Islam Yasser</h3>
+            <p class="profile-role">Junior Data Analyst</p>
+            <span class="profile-location">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Cairo, Egypt
+            </span>
+
+            <div class="profile-divider"></div>
+
+            <!-- Quick Profile Meta Details -->
+            <div class="profile-meta-list">
+              <div class="profile-meta-item">
+                <span class="meta-label">Education</span>
+                <span class="meta-val">Helwan University, Faculty of Arts (2025)</span>
+              </div>
+              <div class="profile-meta-item">
+                <span class="meta-label">Training</span>
+                <span class="meta-val">Instant Software Solutions (BI & Data Analysis)</span>
+              </div>
+              <div class="profile-meta-item">
+                <span class="meta-label">Current Role</span>
+                <span class="meta-val">Workforce Management (MEEG – METI)</span>
+              </div>
+            </div>
+
+            <!-- Language Proficiency Badges -->
+            <div class="profile-languages">
+              <span class="lang-heading">Languages:</span>
+              <div class="lang-badges">
+                <span class="badge badge-lang">
+                  <span class="badge-dot"></span>
+                  <strong>Arabic</strong> — Native
+                </span>
+                <span class="badge badge-lang">
+                  <span class="badge-dot"></span>
+                  <strong>English</strong> — Good
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Narrative & Pillars -->
+          <div class="about-narrative reveal-on-scroll">
+            <h3 class="narrative-heading">
+              Transforming complex operational data into actionable business value.
+            </h3>
+            
+            <p class="narrative-text">
+              I am a <strong>Junior Data Analyst</strong> based in Egypt and a 2025 graduate of <strong>Helwan University (Faculty of Arts)</strong>. My analytics foundation is built upon intensive specialized training with <strong>Instant Software Solutions</strong>, combined with deep, hands-on operational experience across data annotation, quality assurance, multimodal data auditing, and workforce management.
+            </p>
+
+            <p class="narrative-text">
+              Throughout my professional journey at <strong>Micro Engineering Egypt (MEEG) — METI Company</strong> and <strong>iSON Xperiences</strong>, I have progressed from executing granular first-pass and quality assurance labeling to training technical personnel, developing Standard Operating Procedures (SOPs), and managing workload distribution and SLA targets.
+            </p>
+
+            <p class="narrative-text">
+              This operational background gives me a distinct analytical advantage: I understand how data is generated on the front lines, where errors and ambiguities originate, and how clean data pipelines directly drive reliable executive decisions. Whether modeling Star Schemas in <strong>Power BI</strong>, formulating complex <strong>DAX measures</strong>, querying relational databases with <strong>SQL (including MySQL)</strong>, or writing <strong>Python scripts</strong> for exploratory analysis and web data extraction, I focus relentlessly on turning messy inputs into clear, business-ready intelligence.
+            </p>
+
+            <!-- 3 Operational Pillars -->
+            <div class="pillars-grid">
+              <div class="pillar-card">
+                <div class="pillar-icon text-cyan" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div class="pillar-info">
+                  <h4 class="pillar-title">Data Quality & Auditing</h4>
+                  <p class="pillar-desc">Root-cause error analysis, annotation QA, and multimodal data verification preventing downstream modeling inaccuracies.</p>
+                </div>
+              </div>
+
+              <div class="pillar-card">
+                <div class="pillar-icon text-blue" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div class="pillar-info">
+                  <h4 class="pillar-title">Workforce & SLA Planning</h4>
+                  <p class="pillar-desc">Balancing team capacity, tracking turnaround times, and optimizing operational throughput with data-backed scheduling.</p>
+                </div>
+              </div>
+
+              <div class="pillar-card">
+                <div class="pillar-icon text-emerald" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+                </div>
+                <div class="pillar-info">
+                  <h4 class="pillar-title">Business Intelligence</h4>
+                  <p class="pillar-desc">Designing Star Schemas, DAX calculations, and interactive Power BI & Excel dashboards that uncover profit leakage and bottlenecks.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: VERIFIED SKILLS & COMPETENCIES -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <div class="section-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>
+            <span>Capabilities & Stack</span>
+          </div>
+          <h2 class="section-title">Verified Skills & Competencies</h2>
+          <p class="section-subtitle">Structured proficiencies acquired through verified BI project delivery and hands-on operational experience.</p>
+        </div>
+
+        <div class="skills-grid">
+          
+          <!-- Category 1: Business Intelligence -->
+          <div class="skill-category-card glass-card reveal-on-scroll">
+            <div class="skill-cat-header">
+              <div class="cat-icon-box text-cyan" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+              </div>
+              <div class="cat-title-group">
+                <span class="cat-badge badge-confirmed">Confirmed Tools</span>
+                <h3 class="cat-title">Business Intelligence</h3>
+              </div>
+            </div>
+            <p class="cat-desc">Translating raw data into multi-page dashboards, semantic data models, and automated reporting workflows.</p>
+            <ul class="skill-chips-list" aria-label="Business Intelligence Skills">
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Power BI</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Microsoft Excel</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Power Pivot</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>DAX Formulas</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Power Query</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Category 2: Data Analysis -->
+          <div class="skill-category-card glass-card reveal-on-scroll">
+            <div class="skill-cat-header">
+              <div class="cat-icon-box text-blue" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+              </div>
+              <div class="cat-title-group">
+                <span class="cat-badge badge-core">Core Analytical</span>
+                <h3 class="cat-title">Data Analysis</h3>
+              </div>
+            </div>
+            <p class="cat-desc">End-to-end analytical methodologies to uncover performance drivers, operational trends, and variance anomalies.</p>
+            <ul class="skill-chips-list" aria-label="Data Analysis Skills">
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Data Analysis</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Data Cleaning</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Data Visualization</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Exploratory Data Analysis (EDA)</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>KPI Analysis</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Performance Tracking</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Category 3: Programming & Querying -->
+          <div class="skill-category-card glass-card reveal-on-scroll">
+            <div class="skill-cat-header">
+              <div class="cat-icon-box text-emerald" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <div class="cat-title-group">
+                <span class="cat-badge badge-code">Confirmed &amp; In-Progress</span>
+                <h3 class="cat-title">Programming &amp; Querying</h3>
+              </div>
+            </div>
+            <p class="cat-desc">Scripting, computational logic, data transformation pipelines, relational databases (SQL / MySQL), and dimensional schemas.</p>
+            <ul class="skill-chips-list" aria-label="Programming and Querying Skills">
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>SQL &amp; Relational Databases</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>MySQL</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Python</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Jupyter Notebooks</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Data Parsing &amp; Control Flow</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Algorithmic Problem Solving</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Relational Data Modeling (Star Schema)</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Category 4: Data Collection -->
+          <div class="skill-category-card glass-card reveal-on-scroll">
+            <div class="skill-cat-header">
+              <div class="cat-icon-box text-amber" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <div class="cat-title-group">
+                <span class="cat-badge badge-collect">Ingestion &amp; Parsing</span>
+                <h3 class="cat-title">Data Collection</h3>
+              </div>
+            </div>
+            <p class="cat-desc">Automated, ethical extraction of structured web datasets for comparative benchmarking and market insights.</p>
+            <ul class="skill-chips-list" aria-label="Data Collection Skills">
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Web Scraping</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Data Collection &amp; Ingestion</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Data Extraction</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Category 5: Data Quality & Assurance -->
+          <div class="skill-category-card glass-card reveal-on-scroll">
+            <div class="skill-cat-header">
+              <div class="cat-icon-box text-cyan" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div class="cat-title-group">
+                <span class="cat-badge badge-qa">Operational Rigor</span>
+                <h3 class="cat-title">Data Quality &amp; Assurance</h3>
+              </div>
+            </div>
+            <p class="cat-desc">Hands-on auditing of multimodal datasets, classification precision, and systematic error-pattern tracking.</p>
+            <ul class="skill-chips-list" aria-label="Data Quality and Assurance Skills">
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Data Annotation</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Data Quality Assurance (QA)</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Quality Control (QC)</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Error Pattern Analysis</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Data Validation</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Category 6: Professional & Operational Skills -->
+          <div class="skill-category-card glass-card reveal-on-scroll">
+            <div class="skill-cat-header">
+              <div class="cat-icon-box text-blue" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div class="cat-title-group">
+                <span class="cat-badge badge-ops">Operational Leadership</span>
+                <h3 class="cat-title">Professional &amp; Operational</h3>
+              </div>
+            </div>
+            <p class="cat-desc">Workplace execution, technical onboarding, cross-functional collaboration, and analytical problem resolution.</p>
+            <ul class="skill-chips-list" aria-label="Professional and Operational Skills">
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Problem Solving</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Analytical Thinking</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Technical Training &amp; SOP Development</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Team Collaboration</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Communication</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Attention to Detail</span>
+              </li>
+              <li class="skill-chip">
+                <span class="chip-dot"></span>
+                <span>Workforce Planning</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: VERIFIED GITHUB PROJECTS -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <div class="section-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
+            <span>Verified GitHub Repositories</span>
+          </div>
+          <h2 class="section-title">Featured Analytics Projects</h2>
+          <p class="section-subtitle">Real-world Business Intelligence and Data Modeling implementations structured for recruiter review: <strong>Problem → Process → Result</strong>.</p>
+        </div>
+
+        <!-- Interactive Project Filter Controls -->
+        <div class="project-filter-bar reveal-on-scroll">
+          <button type="button" class="filter-btn active" data-filter="all">All Projects (5)</button>
+          <button type="button" class="filter-btn" data-filter="pbi">Power BI (3)</button>
+          <button type="button" class="filter-btn" data-filter="excel">Microsoft Excel (2)</button>
+        </div>
+
+        <div class="projects-grid">
+          
+          <!-- Project 1: Logistics Vision -->
+          <article class="project-card glass-card reveal-on-scroll" data-category="pbi">
+            <div class="project-card-header">
+              <div class="project-tag-row">
+                <span class="project-platform-badge badge-pbi">Power BI</span>
+                <span class="project-metric-pill">9-Page Interactive Model</span>
+              </div>
+              <h3 class="project-title">Logistics Vision — Fleet &amp; Supply Chain Analytics Dashboard</h3>
+              <div class="project-tools-wrap">
+                <span class="tool-tag">Power BI</span>
+                <span class="tool-tag">Star Schema</span>
+                <span class="tool-tag">Advanced DAX</span>
+                <span class="tool-tag">Power Query</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <!-- Problem -->
+              <div class="project-phase">
+                <div class="phase-badge phase-problem">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  <span>Problem</span>
+                </div>
+                <p class="phase-text">
+                  Fragmented transport logs and lack of unified visibility into fleet safety, driver behavior, and route cost structures created operational blind spots for supply chain management.
+                </p>
+              </div>
+
+              <!-- Analysis / Process -->
+              <div class="project-phase">
+                <div class="phase-badge phase-process">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                  <span>Analysis &amp; Process</span>
+                </div>
+                <p class="phase-text">
+                  Structured a normalized <strong>Star Schema</strong> connecting operational trip facts to driver, vehicle, and route dimensions. Automated ETL data transformations in <strong>Power Query</strong>, formulated custom <strong>DAX measures</strong>, and created dynamic What-If parameters to simulate fuel and route cost variations.
+                </p>
+              </div>
+
+              <!-- Result / Insight -->
+              <div class="project-phase">
+                <div class="phase-badge phase-result">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Result &amp; Insight</span>
+                </div>
+                <p class="phase-text">
+                  Delivered a comprehensive <strong>9-page interactive dashboard</strong> empowering fleet managers to evaluate route profitability, track driver safety scorecards, and forecast operating expenses under changing logistics scenarios.
+                </p>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <a href="https://github.com/islamyasser424-design/Logistics-Vision-Fleet-Supply-Chain-Analytics-Dashboard" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="View Logistics Vision project on GitHub (opens in new tab)">
+                <span>Explore Repository</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2: Olist E-Commerce -->
+          <article class="project-card glass-card reveal-on-scroll" data-category="excel">
+            <div class="project-card-header">
+              <div class="project-tag-row">
+                <span class="project-platform-badge badge-excel">Microsoft Excel</span>
+                <span class="project-metric-pill">99,441 Orders Audited</span>
+              </div>
+              <h3 class="project-title">Olist E-Commerce Performance &amp; Logistics Dashboard</h3>
+              <div class="project-tools-wrap">
+                <span class="tool-tag">Microsoft Excel</span>
+                <span class="tool-tag">Power Pivot</span>
+                <span class="tool-tag">Relational Modeling</span>
+                <span class="tool-tag">KPI Dashboards</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <!-- Problem -->
+              <div class="project-phase">
+                <div class="phase-badge phase-problem">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  <span>Problem</span>
+                </div>
+                <p class="phase-text">
+                  The massive volume of e-commerce transactions obscured critical financial leakage stemming from late customer deliveries, customer installment delays, and payment underpayment checkout anomalies.
+                </p>
+              </div>
+
+              <!-- Analysis / Process -->
+              <div class="project-phase">
+                <div class="phase-badge phase-process">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                  <span>Analysis &amp; Process</span>
+                </div>
+                <p class="phase-text">
+                  Audited <strong>99,441 real orders</strong> across 3 dedicated analytical views (Financial Overview, Order Breakdown, Delivery/Logistics) in Excel. Built relational data models in <strong>Power Pivot</strong> to calculate delivery turnaround vs. estimated promise dates and correlate payment installments with order retention.
+                </p>
+              </div>
+
+              <!-- Result / Insight -->
+              <div class="project-phase">
+                <div class="phase-badge phase-result">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Result &amp; Insight</span>
+                </div>
+                <p class="phase-text">
+                  Uncovered <strong>$1.35M in revenue affected by 7,826 late orders</strong> (averaging 10 days of delay) and pinpointed <strong>11,277 underpayment checkout anomalies</strong>, establishing actionable recommendations for carrier SLA renegotiation.
+                </p>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <a href="https://github.com/islamyasser424-design/Olist-E-Commerce-Dashboard" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="View Olist E-Commerce project on GitHub (opens in new tab)">
+                <span>Explore Repository</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 3: Uber Smart Mobility -->
+          <article class="project-card glass-card reveal-on-scroll" data-category="pbi">
+            <div class="project-card-header">
+              <div class="project-tag-row">
+                <span class="project-platform-badge badge-pbi">Power BI</span>
+                <span class="project-metric-pill">5-Page Operational View</span>
+              </div>
+              <h3 class="project-title">Uber Smart Mobility &amp; Operational Performance Dashboard</h3>
+              <div class="project-tools-wrap">
+                <span class="tool-tag">Power BI</span>
+                <span class="tool-tag">DAX Measures</span>
+                <span class="tool-tag">Power Query (M)</span>
+                <span class="tool-tag">Star Schema</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <!-- Problem -->
+              <div class="project-phase">
+                <div class="phase-badge phase-problem">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  <span>Problem</span>
+                </div>
+                <p class="phase-text">
+                  Insufficient visibility into trip completion rates, cancellation root causes, and lost revenue from unfinished bookings left mobility operations without clear levers to improve driver retention and platform efficiency.
+                </p>
+              </div>
+
+              <!-- Analysis / Process -->
+              <div class="project-phase">
+                <div class="phase-badge phase-process">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                  <span>Analysis &amp; Process</span>
+                </div>
+                <p class="phase-text">
+                  Engineered a Star Schema joining ride booking facts to trip status, vehicle category, and calendar dimensions. Centralized all KPIs into a dedicated <strong>DAX measure repository</strong>, evaluating trip durations, ride fare distributions, and cancellation patterns.
+                </p>
+              </div>
+
+              <!-- Result / Insight -->
+              <div class="project-phase">
+                <div class="phase-badge phase-result">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Result &amp; Insight</span>
+                </div>
+                <p class="phase-text">
+                  Constructed a <strong>5-page operational report</strong> (Home, Overview, Revenue, Losses, Cancellations) that segmented driver cancellations vs. customer drop-offs and quantified lost distance earnings to optimize surge matching.
+                </p>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <a href="https://github.com/islamyasser424-design/Uber-Dashboard" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="View Uber Dashboard project on GitHub (opens in new tab)">
+                <span>Explore Repository</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 4: Amazon Supply Chain -->
+          <article class="project-card glass-card reveal-on-scroll" data-category="pbi">
+            <div class="project-card-header">
+              <div class="project-tag-row">
+                <span class="project-platform-badge badge-pbi">Power BI</span>
+                <span class="project-metric-pill">$577.60K &amp; 46K Units</span>
+              </div>
+              <h3 class="project-title">Amazon Supply Chain &amp; Financial Analytics Dashboard</h3>
+              <div class="project-tools-wrap">
+                <span class="tool-tag">Power BI</span>
+                <span class="tool-tag">Power Query</span>
+                <span class="tool-tag">Logistics Benchmarking</span>
+                <span class="tool-tag">Fulfillment KPIs</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <!-- Problem -->
+              <div class="project-phase">
+                <div class="phase-badge phase-problem">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  <span>Problem</span>
+                </div>
+                <p class="phase-text">
+                  Balancing warehouse inventory levels against variable supplier lead times and high freight costs across regional fulfillment hubs posed continuous risk of stockouts and bloated shipping expenses.
+                </p>
+              </div>
+
+              <!-- Analysis / Process -->
+              <div class="project-phase">
+                <div class="phase-badge phase-process">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                  <span>Analysis &amp; Process</span>
+                </div>
+                <p class="phase-text">
+                  Standardized complex multichannel sales and transportation records using <strong>Power Query</strong>. Mapped multimodal logistics modes (Road, Rail, Air, Sea) against supplier lead times, calculating transit duration variances and freight spend per unit sold.
+                </p>
+              </div>
+
+              <!-- Result / Insight -->
+              <div class="project-phase">
+                <div class="phase-badge phase-result">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Result &amp; Insight</span>
+                </div>
+                <p class="phase-text">
+                  Analyzed <strong>$577.60K in revenue and 46K units sold</strong>, benchmarking an average freight cost of $5.55 and transit duration of 5.75 days to guide regional warehouse rebalancing and curb high-cost air freight reliance.
+                </p>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <a href="https://github.com/islamyasser424-design/Amazon-Dashboard" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="View Amazon Dashboard project on GitHub (opens in new tab)">
+                <span>Explore Repository</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 5: SuperStore Business Intelligence -->
+          <article class="project-card glass-card reveal-on-scroll" data-category="excel">
+            <div class="project-card-header">
+              <div class="project-tag-row">
+                <span class="project-platform-badge badge-excel">Microsoft Excel</span>
+                <span class="project-metric-pill">$2.29M Sales &amp; 9,994 Orders</span>
+              </div>
+              <h3 class="project-title">SuperStore Business Intelligence &amp; Profitability Analysis</h3>
+              <div class="project-tools-wrap">
+                <span class="tool-tag">Microsoft Excel</span>
+                <span class="tool-tag">Power Pivot</span>
+                <span class="tool-tag">Relational Modeling</span>
+                <span class="tool-tag">Dynamic Slicers</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <!-- Problem -->
+              <div class="project-phase">
+                <div class="phase-badge phase-problem">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  <span>Problem</span>
+                </div>
+                <p class="phase-text">
+                  Aggressive discount strategies were severely eroding net margins across core product categories and geographic zones without generating sustainable customer repeat purchases.
+                </p>
+              </div>
+
+              <!-- Analysis / Process -->
+              <div class="project-phase">
+                <div class="phase-badge phase-process">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                  <span>Analysis &amp; Process</span>
+                </div>
+                <p class="phase-text">
+                  Constructed an in-depth dimensional model in <strong>Power Pivot</strong> linking order transactions with product lines, regional manager assignments, and return logs. Implemented interactive timeline filters and dynamic multi-level slicers.
+                </p>
+              </div>
+
+              <!-- Result / Insight -->
+              <div class="project-phase">
+                <div class="phase-badge phase-result">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Result &amp; Insight</span>
+                </div>
+                <p class="phase-text">
+                  Evaluated <strong>$2.29M in total sales across 9,994 orders</strong> (12.47% overall profit margin). Isolated top profitable regional markets while revealing that deep discounts in Furniture and Tables produced net margin losses and elevated return rates.
+                </p>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <a href="https://github.com/islamyasser424-design/Super-Store-excel-Dashboard" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="View SuperStore project on GitHub (opens in new tab)">
+                <span>Explore Repository</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: PROFESSIONAL EXPERIENCE -->
+    <section class="section experience-section" id="experience">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <div class="section-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            <span>Career History</span>
+          </div>
+          <h2 class="section-title">Professional Experience</h2>
+          <p class="section-subtitle">A verified track record of operational discipline, quality control, technical leadership, and workforce optimization.</p>
+        </div>
+
+        <!-- Vertical Timeline -->
+        <div class="timeline-wrapper">
+          <div class="timeline-track" aria-hidden="true"></div>
+
+          <!-- Experience 1: WFM -->
+          <div class="timeline-item reveal-on-scroll">
+            <div class="timeline-marker">
+              <span class="marker-dot active-dot"></span>
+            </div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-header">
+                <div class="timeline-title-row">
+                  <h3 class="timeline-role">Workforce Management &amp; Workload Assignment</h3>
+                  <span class="timeline-period badge-active">June 2026 – Present</span>
+                </div>
+                <div class="timeline-company-row">
+                  <span class="company-name">Micro Engineering Egypt (MEEG) — METI Company</span>
+                  <span class="company-tag">Operational Operations</span>
+                </div>
+              </div>
+              <ul class="timeline-duties">
+                <li>Managed and optimized workload distribution across multiple operational teams to balance capacity and turnaround times.</li>
+                <li>Supported balanced resource allocation across projects to meet strict daily productivity and throughput targets.</li>
+                <li>Utilized data-driven workload planning and workforce management practices to eliminate operational bottlenecks.</li>
+                <li>Supported smooth operational performance across cross-functional annotation pipelines.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience 2: Technical Trainer -->
+          <div class="timeline-item reveal-on-scroll">
+            <div class="timeline-marker">
+              <span class="marker-dot"></span>
+            </div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-header">
+                <div class="timeline-title-row">
+                  <h3 class="timeline-role">Technical Trainer – Data Annotation</h3>
+                  <span class="timeline-period">September 2025 – May 2026</span>
+                </div>
+                <div class="timeline-company-row">
+                  <span class="company-name">Micro Engineering Egypt (MEEG) — METI Company</span>
+                  <span class="company-tag">Training &amp; Enablement</span>
+                </div>
+              </div>
+              <ul class="timeline-duties">
+                <li>Delivered technical training on data annotation processes, labeling tools, and complex project taxonomy guidelines.</li>
+                <li>Developed training materials, SOP documentation, and structured onboarding resources for operational staff.</li>
+                <li>Monitored trainee performance metrics, evaluated error trends, and provided structured, data-informed feedback.</li>
+                <li>Identified knowledge gaps through error analysis and implemented targeted training modules to increase accuracy.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience 3: QC Technician -->
+          <div class="timeline-item reveal-on-scroll">
+            <div class="timeline-marker">
+              <span class="marker-dot"></span>
+            </div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-header">
+                <div class="timeline-title-row">
+                  <h3 class="timeline-role">Quality Control Technician – Data Annotation / Labeling</h3>
+                  <span class="timeline-period">September 2024 – September 2025</span>
+                </div>
+                <div class="timeline-company-row">
+                  <span class="company-name">Micro Engineering Egypt (MEEG) — METI Company</span>
+                  <span class="company-tag">Quality Assurance</span>
+                </div>
+              </div>
+              <ul class="timeline-duties">
+                <li>Reviewed and audited multimodal annotations across image, text, and video datasets against strict quality thresholds.</li>
+                <li>Identified labeling discrepancies and supported comprehensive data quality improvement cycles.</li>
+                <li>Utilized performance tracking dashboards and Microsoft Excel for error logging, categorization, and root-cause analysis.</li>
+                <li>Collaborated with operational leads to refine annotation guidelines and eliminate classification ambiguities.</li>
+                <li>Maintained rigorous quality standards required for production machine learning and AI training datasets.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience 4: FP/QA Labeler -->
+          <div class="timeline-item reveal-on-scroll">
+            <div class="timeline-marker">
+              <span class="marker-dot"></span>
+            </div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-header">
+                <div class="timeline-title-row">
+                  <h3 class="timeline-role">FP/QA Labeler – Data Annotation &amp; Quality Assurance</h3>
+                  <span class="timeline-period">September 2023 – September 2024</span>
+                </div>
+                <div class="timeline-company-row">
+                  <span class="company-name">Micro Engineering Egypt (MEEG) — METI Company</span>
+                  <span class="company-tag">Data Ingestion</span>
+                </div>
+              </div>
+              <ul class="timeline-duties">
+                <li>Executed first-pass labeling and second-pass quality assurance on high-complexity multimodal datasets.</li>
+                <li>Reviewed annotated image, text, and video data against tight project guidelines and edge-case criteria.</li>
+                <li>Identified ambiguous edge cases and provided actionable feedback to peer labelers to ensure consistency.</li>
+                <li>Maintained high throughput while meeting quality standards in high-volume production pipelines.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience 5: Technical Team Support -->
+          <div class="timeline-item reveal-on-scroll">
+            <div class="timeline-marker">
+              <span class="marker-dot"></span>
+            </div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-header">
+                <div class="timeline-title-row">
+                  <h3 class="timeline-role">Technical Team Support</h3>
+                  <span class="timeline-period">April 2023 – September 2023</span>
+                </div>
+                <div class="timeline-company-row">
+                  <span class="company-name">iSON Xperiences</span>
+                  <span class="company-tag">Customer Operations</span>
+                </div>
+              </div>
+              <ul class="timeline-duties">
+                <li>Provided technical guidance and troubleshooting support for escalated and complex customer inquiries.</li>
+                <li>Assisted colleagues with problem-solving workflows, root-cause identification, and case documentation.</li>
+                <li>Shared troubleshooting strategies and operational knowledge to improve team-level first-contact resolution KPIs.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience 6: Follow-Up Specialist -->
+          <div class="timeline-item reveal-on-scroll">
+            <div class="timeline-marker">
+              <span class="marker-dot"></span>
+            </div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-header">
+                <div class="timeline-title-row">
+                  <h3 class="timeline-role">Follow-Up Specialist</h3>
+                  <span class="timeline-period">September 2022 – April 2023</span>
+                </div>
+                <div class="timeline-company-row">
+                  <span class="company-name">iSON Xperiences</span>
+                  <span class="company-tag">Case Management</span>
+                </div>
+              </div>
+              <ul class="timeline-duties">
+                <li>Managed systematic follow-ups for ongoing and escalated technical support tickets.</li>
+                <li>Coordinated between internal engineering and operational departments to monitor case milestones and remove blockers.</li>
+                <li>Ensured timely issue resolution aligned with contractual SLAs, improving customer satisfaction scores.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience 7: Customer Service Agent -->
+          <div class="timeline-item reveal-on-scroll">
+            <div class="timeline-marker">
+              <span class="marker-dot"></span>
+            </div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-header">
+                <div class="timeline-title-row">
+                  <h3 class="timeline-role">Customer Service Agent</h3>
+                  <span class="timeline-period">May 2022 – September 2022</span>
+                </div>
+                <div class="timeline-company-row">
+                  <span class="company-name">iSON Xperiences</span>
+                  <span class="company-tag">Support Operations</span>
+                </div>
+              </div>
+              <ul class="timeline-duties">
+                <li>Handled frontline inquiries across phone, chat, and email channels with empathy and clarity.</li>
+                <li>Executed service-related troubleshooting while strictly meeting accuracy and quality standards.</li>
+                <li>Consistently met speed and resolution benchmarks during high-volume customer contact surges.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 6: EDUCATION & TRAINING -->
+    <section class="section education-section" id="education">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <div class="section-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            <span>Academic &amp; Professional Qualifications</span>
+          </div>
+          <h2 class="section-title">Education &amp; Training</h2>
+          <p class="section-subtitle">Formal degree studies complemented by specialized data analytics training.</p>
+        </div>
+
+        <div class="education-grid">
+          
+          <!-- Education Card -->
+          <div class="edu-card glass-card reveal-on-scroll">
+            <div class="edu-icon-wrap text-cyan">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <div class="edu-content">
+              <span class="edu-badge">University Degree</span>
+              <h3 class="edu-degree">Faculty of Arts</h3>
+              <h4 class="edu-institution">Helwan University</h4>
+              <div class="edu-meta">
+                <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Class of 2025</span>
+                <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Cairo, Egypt</span>
+              </div>
+              <p class="edu-desc">
+                Developed critical thinking, research synthesis, structured problem solving, and analytical communication skills that form the foundation of effective data storytelling.
+              </p>
+            </div>
+          </div>
+
+          <!-- Training Card -->
+          <div class="edu-card glass-card reveal-on-scroll">
+            <div class="edu-icon-wrap text-blue">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+            </div>
+            <div class="edu-content">
+              <span class="edu-badge badge-program">Specialized Training</span>
+              <h3 class="edu-degree">Data Analysis Program</h3>
+              <h4 class="edu-institution">Instant Software Solutions</h4>
+              <div class="edu-meta">
+                <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Completed Curriculum</span>
+                <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Practical BI Applications</span>
+              </div>
+              <p class="edu-desc">
+                Intensive hands-on training focusing on relational database querying and management with SQL (including MySQL), relational data modeling (Star Schema), exploratory data analysis (EDA), automated Power Query transformations, advanced DAX formula architecture, and business intelligence dashboard design.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 7: WEB SCRAPING & ANALYTICAL WORKFLOW -->
+    <section class="section workflow-section" id="workflow">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <div class="section-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+            <span>End-to-End Pipeline</span>
+          </div>
+          <h2 class="section-title">Web Scraping &amp; Analytical Lifecycle</h2>
+          <p class="section-subtitle">Bridging automated web collection, operational auditing, and dimensional modeling into decision-grade business dashboards.</p>
+        </div>
+
+        <!-- 4 Step Pipeline -->
+        <div class="workflow-steps-grid">
+          
+          <div class="workflow-step-card glass-card reveal-on-scroll">
+            <div class="step-counter">01</div>
+            <div class="step-icon text-cyan" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3 class="step-title">Web Scraping &amp; Collection</h3>
+            <p class="step-desc">Automating ethical extraction of external market, pricing, and operational data from online endpoints into structured tabular formats.</p>
+            <div class="step-tag-pill">Python • Requests • Extraction</div>
+          </div>
+
+          <div class="workflow-step-card glass-card reveal-on-scroll">
+            <div class="step-counter">02</div>
+            <div class="step-icon text-blue" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 12 14 22 4"/></svg>
+            </div>
+            <h3 class="step-title">Data Cleaning &amp; Validation</h3>
+            <p class="step-desc">Applying operational QA discipline to eliminate missing values, parse date formats, resolve data inconsistencies, and audit schema integrity.</p>
+            <div class="step-tag-pill">Power Query • QA • Validation</div>
+          </div>
+
+          <div class="workflow-step-card glass-card reveal-on-scroll">
+            <div class="step-counter">03</div>
+            <div class="step-icon text-emerald" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+            </div>
+            <h3 class="step-title">Data Modeling &amp; DAX</h3>
+            <p class="step-desc">Designing normalized Star Schemas with 1-to-many relationships, centralized fact tables, and optimized DAX business formulas.</p>
+            <div class="step-tag-pill">Star Schema • DAX • Power Pivot</div>
+          </div>
+
+          <div class="workflow-step-card glass-card reveal-on-scroll">
+            <div class="step-counter">04</div>
+            <div class="step-icon text-amber" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+            </div>
+            <h3 class="step-title">Interactive BI Dashboards</h3>
+            <p class="step-desc">Building dynamic reports with executive KPI cards, drill-down slicers, and What-If scenario modeling to drive confident decisions.</p>
+            <div class="step-tag-pill">Power BI • Excel • Decision Support</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 8: SERVICES -->
+    <section class="section services-section" id="services">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <div class="section-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            <span>What I Bring</span>
+          </div>
+          <h2 class="section-title">Services &amp; Offerings</h2>
+          <p class="section-subtitle">Focused analytical services aligned with junior analytics, data cleaning, and business intelligence.</p>
+        </div>
+
+        <div class="services-grid">
+          
+          <!-- Service 1: Data Analysis -->
+          <div class="service-card glass-card reveal-on-scroll">
+            <div class="service-icon-box text-cyan" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+            </div>
+            <h3 class="service-title">Data Analysis</h3>
+            <p class="service-desc">
+              Transforming structured business datasets into meaningful insights and operational KPIs. Analyzing performance trends, identifying revenue leakage, and delivering data-driven answers to core operational questions.
+            </p>
+            <div class="service-features">
+              <span class="service-pill">KPI Formulations</span>
+              <span class="service-pill">EDA</span>
+              <span class="service-pill">Trend Tracking</span>
+            </div>
+          </div>
+
+          <!-- Service 2: Data Cleaning & Prep -->
+          <div class="service-card glass-card reveal-on-scroll">
+            <div class="service-icon-box text-blue" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <h3 class="service-title">Data Cleaning &amp; Preparation</h3>
+            <p class="service-desc">
+              Auditing, validating, and structuring messy, inconsistent data into reliable analytical assets. Removing duplicate entries, standardizing date-time schemas, and applying error-logging workflows to ensure downstream accuracy.
+            </p>
+            <div class="service-features">
+              <span class="service-pill">Power Query</span>
+              <span class="service-pill">Missing Value Imputation</span>
+              <span class="service-pill">Schema Auditing</span>
+            </div>
+          </div>
+
+          <!-- Service 3: Data Visualization -->
+          <div class="service-card glass-card reveal-on-scroll">
+            <div class="service-icon-box text-emerald" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+            </div>
+            <h3 class="service-title">Data Visualization &amp; Dashboards</h3>
+            <p class="service-desc">
+              Creating intuitive Power BI and Microsoft Excel dashboards featuring responsive layouts, custom color hierarchies, dynamic timeline slicers, and interactive drill-through paths tailored to stakeholders.
+            </p>
+            <div class="service-features">
+              <span class="service-pill">Power BI Reports</span>
+              <span class="service-pill">Excel Power Pivot</span>
+              <span class="service-pill">Dynamic Slicers</span>
+            </div>
+          </div>
+
+          <!-- Service 4: Web Data Collection -->
+          <div class="service-card glass-card reveal-on-scroll">
+            <div class="service-icon-box text-amber" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3 class="service-title">Web Data Collection</h3>
+            <p class="service-desc">
+              Extracting structured tabular records from online websites and public endpoints for market research, price comparisons, and operational benchmarks while adhering to rate limits and ethical guidelines.
+            </p>
+            <div class="service-features">
+              <span class="service-pill">Web Scraping</span>
+              <span class="service-pill">Data Ingestion</span>
+              <span class="service-pill">Tabular Structuring</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 9: CAREER OBJECTIVE -->
+    <section class="section objective-section" id="objective">
+      <div class="container">
+        
+        <div class="objective-card glass-card reveal-on-scroll">
+          <div class="quote-icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+          </div>
+          
+          <div class="objective-badge">
+            <span>Career Objective</span>
+          </div>
+
+          <blockquote class="objective-quote">
+            "To build a career as a Data Analyst by combining my experience in data quality, workforce management, and operational performance with analytical tools and data-driven problem solving. I aim to transform data into clear insights that support better decisions, improve processes, and create measurable business value while continuously developing my technical and analytical skills."
+          </blockquote>
+
+          <div class="objective-author">
+            <div class="author-info">
+              <strong class="author-name">Islam Yasser</strong>
+              <span class="author-title">Junior Data Analyst • Cairo, Egypt</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 10: CONTACT -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <div class="section-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <span>Let's Connect</span>
+          </div>
+          <h2 class="section-title">Get in Touch</h2>
+          <p class="section-subtitle">Open to Junior Data Analyst opportunities, BI dashboard projects, and analytical collaborations.</p>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Contact Info Cards -->
+          <div class="contact-info-column reveal-on-scroll">
+            
+            <a href="mailto:islamyasser424@gmail.com" class="contact-channel-card glass-card">
+              <div class="channel-icon text-cyan" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div class="channel-content">
+                <span class="channel-label">Email Directly</span>
+                <strong class="channel-val">islamyasser424@gmail.com</strong>
+                <span class="channel-action">Click to send an email &rarr;</span>
+              </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/islam-yasser-55048b378/" target="_blank" rel="noopener noreferrer" class="contact-channel-card glass-card">
+              <div class="channel-icon text-blue" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c.99 0 1.8-.81 1.8-1.8 0-.98-.81-1.79-1.8-1.79-.99 0-1.8.81-1.8 1.79 0 .99.81 1.8 1.8 1.8m1.4 9.74v-8.37H5.06v8.37h2.8Z"/></svg>
+              </div>
+              <div class="channel-content">
+                <span class="channel-label">LinkedIn Profile</span>
+                <strong class="channel-val">linkedin.com/in/islam-yasser-55048b378</strong>
+                <span class="channel-action">Connect on LinkedIn &rarr;</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/islamyasser424-design" target="_blank" rel="noopener noreferrer" class="contact-channel-card glass-card">
+              <div class="channel-icon text-emerald" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z"/></svg>
+              </div>
+              <div class="channel-content">
+                <span class="channel-label">GitHub Repositories</span>
+                <strong class="channel-val">github.com/islamyasser424-design</strong>
+                <span class="channel-action">View Project Code &rarr;</span>
+              </div>
+            </a>
+
+            <div class="contact-location-pill glass-card">
+              <div class="loc-icon text-amber" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <strong>Location:</strong> Cairo, Egypt &bull; Available for Remote &amp; On-Site Roles
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Interactive Contact Form -->
+          <div class="contact-form-column reveal-on-scroll">
+            <div class="contact-form-card glass-card">
+              <h3 class="form-title">Send a Direct Message</h3>
+              <p class="form-sub">Feel free to reach out regarding data roles, BI consulting, or general inquiries.</p>
+              
+              <form id="contactForm" class="contact-form" novalidate>
+                
+                <div class="form-group">
+                  <label for="fullName" class="form-label">Full Name <span class="required-star">*</span></label>
+                  <input type="text" id="fullName" name="fullName" class="form-input" placeholder="e.g. Sarah Jenkins" required autocomplete="name">
+                  <span class="error-msg" id="nameError" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="emailAddress" class="form-label">Email Address <span class="required-star">*</span></label>
+                  <input type="email" id="emailAddress" name="emailAddress" class="form-input" placeholder="e.g. sarah@company.com" required autocomplete="email">
+                  <span class="error-msg" id="emailError" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="messageSubject" class="form-label">Subject <span class="required-star">*</span></label>
+                  <input type="text" id="messageSubject" name="messageSubject" class="form-input" placeholder="e.g. Junior Data Analyst Role Opportunity" required>
+                  <span class="error-msg" id="subjectError" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="formMessage" class="form-label">Message <span class="required-star">*</span></label>
+                  <textarea id="formMessage" name="formMessage" rows="5" class="form-textarea" placeholder="Describe the opportunity, project requirements, or question..." required></textarea>
+                  <span class="error-msg" id="messageError" aria-live="polite"></span>
+                </div>
+
+                <!-- Live Form Status Toast / Notification -->
+                <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+
+                <button type="submit" id="submitBtn" class="btn btn-primary btn-block">
+                  <span class="btn-text">Send Message</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </button>
+
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="#hero" class="footer-logo">
+          <strong>Islam Yasser</strong>
+          <span>Junior Data Analyst</span>
+        </a>
+        <p class="footer-tagline">
+          Turning data into meaningful insights through analysis, visualization, and data-driven problem solving.
+        </p>
+      </div>
+
+      <div class="footer-links-group">
+        <span class="footer-heading">Navigation</span>
+        <ul class="footer-nav">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#workflow">Workflow</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social-group">
+        <span class="footer-heading">Connect</span>
+        <div class="footer-social-icons">
+          <a href="https://github.com/islamyasser424-design" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/islam-yasser-55048b378/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c.99 0 1.8-.81 1.8-1.8 0-.98-.81-1.79-1.8-1.79-.99 0-1.8.81-1.8 1.79 0 .99.81 1.8 1.8 1.8m1.4 9.74v-8.37H5.06v8.37h2.8Z"/></svg>
+          </a>
+          <a href="mailto:islamyasser424@gmail.com" class="social-icon-btn" aria-label="Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom container">
+      <p class="copyright-text">&copy; 2026 Islam Yasser. All rights reserved.</p>
+      <p class="built-note">Built with Semantic HTML5, Modern CSS3 &amp; Vanilla JavaScript &bull; Egypt</p>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button id="backToTop" class="back-to-top-btn" type="button" aria-label="Back to top of page" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="m18 15-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
