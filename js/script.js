@@ -332,14 +332,40 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Simulate sending feedback
+      // Real message delivery via FormSubmit AJAX
       if (submitBtn) {
         submitBtn.disabled = true;
         const btnText = submitBtn.querySelector('.btn-text');
         if (btnText) btnText.textContent = 'Sending...';
       }
 
-      setTimeout(() => {
+      if (formStatus) {
+        formStatus.className = 'form-status';
+        formStatus.textContent = 'Sending message to islamyasser424@gmail.com...';
+      }
+
+      fetch('https://formsubmit.co/ajax/islamyasser424@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: nameVal,
+          email: emailVal,
+          _subject: `New Portfolio Message: ${subjectVal}`,
+          message: messageVal,
+          _template: 'table',
+          _captcha: 'false'
+        })
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
         if (submitBtn) {
           submitBtn.disabled = false;
           const btnText = submitBtn.querySelector('.btn-text');
@@ -349,13 +375,27 @@ document.addEventListener('DOMContentLoaded', () => {
         if (formStatus) {
           formStatus.className = 'form-status success';
           formStatus.innerHTML = `
-            <strong>Message Prepared!</strong> Thank you, <strong>${escapeHtml(nameVal)}</strong>. Your inquiry regarding <em>"${escapeHtml(subjectVal)}"</em> has been received. You can also connect directly via <a href="mailto:islamyasser424@gmail.com" style="text-decoration: underline; font-weight: 600;">islamyasser424@gmail.com</a>.
+            <strong>Message Sent Successfully!</strong> Thank you, <strong>${escapeHtml(nameVal)}</strong>. Your message has been delivered directly to <strong>islamyasser424@gmail.com</strong>.
           `;
         }
-
-        // Reset the form
         contactForm.reset();
-      }, 700);
+      })
+      .catch(error => {
+        console.error('Submission notice:', error);
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          const btnText = submitBtn.querySelector('.btn-text');
+          if (btnText) btnText.textContent = 'Send Message';
+        }
+
+        if (formStatus) {
+          formStatus.className = 'form-status info';
+          const mailtoUrl = `mailto:islamyasser424@gmail.com?subject=${encodeURIComponent(subjectVal)}&body=${encodeURIComponent('From: ' + nameVal + ' (' + emailVal + ')\n\n' + messageVal)}`;
+          formStatus.innerHTML = `
+            <strong>Send Directly:</strong> Click here to send via your email client: <a href="${mailtoUrl}" style="text-decoration: underline; font-weight: bold; color: inherit;">Send Email to islamyasser424@gmail.com</a>
+          `;
+        }
+      });
     });
   }
 
