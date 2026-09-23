@@ -341,10 +341,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (formStatus) {
         formStatus.className = 'form-status';
-        formStatus.textContent = 'Sending message to islamyasser424@gmail.com...';
+        formStatus.textContent = 'Sending message...';
       }
 
-      fetch('https://formsubmit.co/ajax/islamyasser424@gmail.com', {
+      fetch('https://formsubmit.co/ajax/6bdfb41e98e1b15c450012845bcce703', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -359,12 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
           _captcha: 'false'
         })
       })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
+      .then(response => response.json())
       .then(data => {
         if (submitBtn) {
           submitBtn.disabled = false;
@@ -372,13 +367,23 @@ document.addEventListener('DOMContentLoaded', () => {
           if (btnText) btnText.textContent = 'Send Message';
         }
 
-        if (formStatus) {
-          formStatus.className = 'form-status success';
-          formStatus.innerHTML = `
-            <strong>Message Sent Successfully!</strong> Thank you, <strong>${escapeHtml(nameVal)}</strong>. Your message has been delivered directly to <strong>islamyasser424@gmail.com</strong>.
-          `;
+        if (data.success === 'true' || data.success === true) {
+          if (formStatus) {
+            formStatus.className = 'form-status success';
+            formStatus.innerHTML = `
+              <strong>Message Sent Successfully!</strong> Thank you, <strong>${escapeHtml(nameVal)}</strong>. Your message has been delivered directly to Islam Yasser.
+            `;
+          }
+          contactForm.reset();
+        } else {
+          if (formStatus) {
+            formStatus.className = 'form-status info';
+            const mailtoUrl = `mailto:islamyasser424@gmail.com?subject=${encodeURIComponent(subjectVal)}&body=${encodeURIComponent('From: ' + nameVal + ' (' + emailVal + ')\n\n' + messageVal)}`;
+            formStatus.innerHTML = `
+              <strong>Note:</strong> ${escapeHtml(data.message || 'Please send directly via email')}. <a href="${mailtoUrl}" style="text-decoration: underline; font-weight: bold; color: inherit;">Click to Send Email</a>
+            `;
+          }
         }
-        contactForm.reset();
       })
       .catch(error => {
         console.error('Submission notice:', error);
