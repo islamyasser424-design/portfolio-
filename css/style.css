@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ISLAM YASSER — JUNIOR DATA ANALYST PORTFOLIO STYLESHEET
+   ISLAM YASSER — DATA ANALYST PORTFOLIO STYLESHEET
    Pure Modern CSS3 | Zero External Frameworks | Responsive | Dark & Light Modes
    ========================================================================== */
 
@@ -555,7 +555,7 @@ html[data-theme="light"] .moon-icon { display: block; }
   height: 24px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: center center;
   border: 1.5px solid var(--accent-cyan);
   flex-shrink: 0;
 }
@@ -979,7 +979,7 @@ html[data-theme="light"] .moon-icon { display: block; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 16%;
+  object-position: center center;
   display: block;
   transform: scale(1.02);
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.3s ease;

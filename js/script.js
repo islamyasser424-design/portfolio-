@@ -1,5 +1,5 @@
 /**
- * ISLAM YASSER — JUNIOR DATA ANALYST PORTFOLIO
+ * ISLAM YASSER — DATA ANALYST PORTFOLIO
  * Vanilla JavaScript (ES6+)
  * 
  * Features:
