@@ -1511,30 +1511,34 @@
               <p class="form-sub">Feel free to reach out regarding data roles, BI consulting, or general inquiries.</p>
               
               <form id="contactForm" class="contact-form" action="https://formsubmit.co/6bdfb41e98e1b15c450012845bcce703" method="POST" novalidate>
+                <!-- FormSubmit Configuration & Anti-Spam Fields -->
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_subject" id="formSubmitSubject" value="Portfolio Form Submission">
+                <input type="hidden" name="_replyto" id="formSubmitReplyTo" value="">
+                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
                 
                 <div class="form-group">
                   <label for="fullName" class="form-label">Full Name <span class="required-star">*</span></label>
-                  <input type="text" id="fullName" name="fullName" class="form-input" placeholder="e.g. Sarah Jenkins" required autocomplete="name">
+                  <input type="text" id="fullName" name="Name" class="form-input" placeholder="e.g. Sarah Jenkins" required autocomplete="name">
                   <span class="error-msg" id="nameError" aria-live="polite"></span>
                 </div>
 
                 <div class="form-group">
                   <label for="emailAddress" class="form-label">Email Address <span class="required-star">*</span></label>
-                  <input type="email" id="emailAddress" name="emailAddress" class="form-input" placeholder="e.g. sarah@company.com" required autocomplete="email">
+                  <input type="email" id="emailAddress" name="Email" class="form-input" placeholder="e.g. sarah@company.com" required autocomplete="email">
                   <span class="error-msg" id="emailError" aria-live="polite"></span>
                 </div>
 
                 <div class="form-group">
                   <label for="messageSubject" class="form-label">Subject <span class="required-star">*</span></label>
-                  <input type="text" id="messageSubject" name="messageSubject" class="form-input" placeholder="e.g. Data Analyst Role Opportunity" required>
+                  <input type="text" id="messageSubject" name="Subject" class="form-input" placeholder="e.g. Data Analyst Role Opportunity" required>
                   <span class="error-msg" id="subjectError" aria-live="polite"></span>
                 </div>
 
                 <div class="form-group">
                   <label for="formMessage" class="form-label">Message <span class="required-star">*</span></label>
-                  <textarea id="formMessage" name="formMessage" rows="5" class="form-textarea" placeholder="Describe the opportunity, project requirements, or question..." required></textarea>
+                  <textarea id="formMessage" name="Message" rows="5" class="form-textarea" placeholder="Describe the opportunity, project requirements, or question..." required></textarea>
                   <span class="error-msg" id="messageError" aria-live="polite"></span>
                 </div>
 

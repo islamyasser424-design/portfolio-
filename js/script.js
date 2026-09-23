@@ -344,6 +344,36 @@ document.addEventListener('DOMContentLoaded', () => {
         formStatus.textContent = 'Sending message...';
       }
 
+      const formattedSubject = `Portfolio Form Submission - ${nameVal}`;
+
+      // Synchronize hidden inputs for fallback consistency
+      const hiddenSubject = document.getElementById('formSubmitSubject');
+      if (hiddenSubject) {
+        hiddenSubject.value = formattedSubject;
+      }
+      const hiddenReplyTo = document.getElementById('formSubmitReplyTo');
+      if (hiddenReplyTo) {
+        hiddenReplyTo.value = emailVal;
+      }
+
+      // If opened locally as a file:/// URL, FormSubmit requires an HTTP/HTTPS web origin
+      if (window.location.protocol === 'file:') {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          const btnText = submitBtn.querySelector('.btn-text');
+          if (btnText) btnText.textContent = 'Send Message';
+        }
+        if (formStatus) {
+          formStatus.className = 'form-status info';
+          const liveUrl = 'https://islamyasser424-design.github.io/portfolio-/';
+          const mailtoUrl = `mailto:islamyasser424@gmail.com?subject=${encodeURIComponent(formattedSubject)}&body=${encodeURIComponent('From: ' + nameVal + ' (' + emailVal + ')\nSubject: ' + subjectVal + '\n\n' + messageVal)}`;
+          formStatus.innerHTML = `
+            <strong>Local File Notice:</strong> FormSubmit requires a live web server. Please test directly on your live website: <a href="${liveUrl}" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; font-weight: bold; color: inherit;">Open Live Website</a>, or <a href="${mailtoUrl}" style="text-decoration: underline; font-weight: bold; color: inherit;">Send via Email Client</a>.
+          `;
+        }
+        return;
+      }
+
       fetch('https://formsubmit.co/ajax/6bdfb41e98e1b15c450012845bcce703', {
         method: 'POST',
         headers: {
@@ -351,10 +381,12 @@ document.addEventListener('DOMContentLoaded', () => {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          name: nameVal,
-          email: emailVal,
-          _subject: `New Portfolio Message: ${subjectVal}`,
-          message: messageVal,
+          Name: nameVal,
+          Email: emailVal,
+          Subject: subjectVal,
+          Message: messageVal,
+          _subject: formattedSubject,
+          _replyto: emailVal,
           _template: 'table',
           _captcha: 'false'
         })
@@ -378,7 +410,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
           if (formStatus) {
             formStatus.className = 'form-status info';
-            const mailtoUrl = `mailto:islamyasser424@gmail.com?subject=${encodeURIComponent(subjectVal)}&body=${encodeURIComponent('From: ' + nameVal + ' (' + emailVal + ')\n\n' + messageVal)}`;
+            const mailtoUrl = `mailto:islamyasser424@gmail.com?subject=${encodeURIComponent(formattedSubject)}&body=${encodeURIComponent('From: ' + nameVal + ' (' + emailVal + ')\nSubject: ' + subjectVal + '\n\n' + messageVal)}`;
             formStatus.innerHTML = `
               <strong>Note:</strong> ${escapeHtml(data.message || 'Please send directly via email')}. <a href="${mailtoUrl}" style="text-decoration: underline; font-weight: bold; color: inherit;">Click to Send Email</a>
             `;
@@ -395,7 +427,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (formStatus) {
           formStatus.className = 'form-status info';
-          const mailtoUrl = `mailto:islamyasser424@gmail.com?subject=${encodeURIComponent(subjectVal)}&body=${encodeURIComponent('From: ' + nameVal + ' (' + emailVal + ')\n\n' + messageVal)}`;
+          const mailtoUrl = `mailto:islamyasser424@gmail.com?subject=${encodeURIComponent(formattedSubject)}&body=${encodeURIComponent('From: ' + nameVal + ' (' + emailVal + ')\nSubject: ' + subjectVal + '\n\n' + messageVal)}`;
           formStatus.innerHTML = `
             <strong>Send Directly:</strong> Click here to send via your email client: <a href="${mailtoUrl}" style="text-decoration: underline; font-weight: bold; color: inherit;">Send Email to islamyasser424@gmail.com</a>
           `;
