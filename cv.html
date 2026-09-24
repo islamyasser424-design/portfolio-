@@ -345,6 +345,44 @@
         text-decoration: none !important;
       }
     }
+
+    /* Screen-Only Mobile Responsive Enhancements */
+    @media screen and (max-width: 640px) {
+      body {
+        padding: 12px 10px;
+      }
+
+      .action-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .action-bar > div:last-child {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .entry-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+      }
+
+      .entry-subheader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+      }
+
+      .contact-info {
+        font-size: 8pt;
+        line-height: 1.6;
+        word-break: break-word;
+      }
+    }
   </style>
 </head>
 <body>
