@@ -289,6 +289,26 @@
       font-weight: 700;
     }
 
+    /* Project Entries Spacing (Guarantees Strict 2-Page Fit for All 8 Projects) */
+    .project-entry {
+      margin-bottom: 4px;
+    }
+
+    .project-entry .entry-header {
+      margin-bottom: 0.5px;
+    }
+
+    .project-entry .project-tools {
+      font-size: 8.1pt;
+      margin-bottom: 1px;
+    }
+
+    .project-entry ul.bullet-list li {
+      font-size: 8.3pt;
+      line-height: 1.24;
+      margin-bottom: 0.5px;
+    }
+
     /* Print Header on Page 2 */
     .page-2-header {
       display: none;
@@ -560,86 +580,104 @@
 
     <!-- 4. VERIFIED ANALYTICS PROJECTS -->
     <section>
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #000000; padding-bottom: 1.5px; margin-bottom: 5px;">
-        <h2 class="section-heading" style="border-bottom: none; padding-bottom: 0; margin-bottom: 0;">Verified Analytics Projects</h2>
-        <span style="font-size: 8pt; font-weight: 700;"><a href="https://islamyasser424-design.github.io/portfolio-/#projects" target="_blank" rel="noopener noreferrer" style="color: #000000; text-decoration: underline;">View All 8 Verified Projects on Portfolio ↗</a></span>
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #000000; padding-bottom: 1.5px; margin-bottom: 4px;">
+        <h2 class="section-heading" style="border-bottom: none; padding-bottom: 0; margin-bottom: 0;">Verified Analytics Projects (8)</h2>
+        <span style="font-size: 8pt; font-weight: 700;"><a href="https://islamyasser424-design.github.io/portfolio-/#projects" target="_blank" rel="noopener noreferrer" style="color: #000000; text-decoration: underline;">Explore Interactive Dashboards Online ↗</a></span>
       </div>
 
       <!-- Project 1: AdventureWorks -->
-      <div class="entry-item">
+      <div class="entry-item project-entry">
         <div class="entry-header">
           <span class="entry-role">AdventureWorks Business Intelligence &amp; Sales Performance Dashboard</span>
           <span class="entry-date"><a href="https://github.com/islamyasser424-design/AdventureWorks-Dashboard" target="_blank" rel="noopener noreferrer">GitHub Repo</a></span>
         </div>
         <div class="project-tools"><strong>Tools:</strong> Power BI, Star &amp; Snowflake Schemas, Advanced DAX, Power Query (M)</div>
         <ul class="bullet-list">
-          <li>Architected a multi-page BI model joining sales facts to customer demographics, products, and regional territories via Star and Snowflake schemas.</li>
-          <li>Formulated advanced DAX measures to analyze $24.9M in revenue and $10.5M net profit across 25.2K orders and 17K unique customers, tracking MoM growth and return rates.</li>
+          <li>Architected a multi-page BI model across Star and Snowflake schemas connecting sales facts to customer demographics, regional territories, and products; developed advanced DAX measures analyzing $24.9M revenue, $10.5M profit across 25.2K orders and 17K customers, tracking MoM growth and return rates.</li>
         </ul>
       </div>
 
       <!-- Project 2: Adidas -->
-      <div class="entry-item">
+      <div class="entry-item project-entry">
         <div class="entry-header">
           <span class="entry-role">Adidas Global Sales &amp; Reseller Performance Dashboard</span>
           <span class="entry-date"><a href="https://github.com/islamyasser424-design/Adidas-Dashboard" target="_blank" rel="noopener noreferrer">GitHub Repo</a></span>
         </div>
         <div class="project-tools"><strong>Tools:</strong> Power BI, Star Schema Modeling, DAX Measures, Power Query</div>
         <ul class="bullet-list">
-          <li>Engineered a centralized Star Schema linking central sales transactions with 6 dimensional entities across products, resellers, and sales territories.</li>
-          <li>Audited $77.55M in total sales and 204K units sold across 701 resellers and 4K orders, benchmarking sales quotas and regional wholesale margin health.</li>
+          <li>Engineered a centralized Star Schema linking central sales with 6 dimensions across products, resellers, and sales territories; audited $77.55M in total sales and 204K units sold across 701 resellers and 4K orders, benchmarking sales quotas and wholesale margin health.</li>
         </ul>
       </div>
 
       <!-- Project 3: Logistics Vision -->
-      <div class="entry-item">
+      <div class="entry-item project-entry">
         <div class="entry-header">
           <span class="entry-role">Logistics Vision — Fleet &amp; Supply Chain Analytics Dashboard</span>
           <span class="entry-date"><a href="https://github.com/islamyasser424-design/Logistics-Vision-Fleet-Supply-Chain-Analytics-Dashboard" target="_blank" rel="noopener noreferrer">GitHub Repo</a></span>
         </div>
         <div class="project-tools"><strong>Tools:</strong> Power BI, Star Schema, Advanced DAX, Power Query (M)</div>
         <ul class="bullet-list">
-          <li>Structured a normalized Star Schema connecting operational transportation logs to driver behavior, route categories, and vehicle dimensions.</li>
-          <li>Architected a 9-page interactive dashboard with dynamic What-If DAX parameters to evaluate route margins, driver safety scorecards, and fuel operating expenses.</li>
+          <li>Structured a normalized Star Schema connecting operational transportation logs to driver behavior, route categories, and vehicles; architected a 9-page interactive dashboard with dynamic What-If DAX parameters to evaluate route margins, driver safety, and fuel operating expenses.</li>
         </ul>
       </div>
 
-      <!-- Project 4: Olist E-Commerce -->
-      <div class="entry-item">
+      <!-- Project 4: Amazon Supply Chain -->
+      <div class="entry-item project-entry">
+        <div class="entry-header">
+          <span class="entry-role">Amazon Supply Chain &amp; Financial Analytics Dashboard</span>
+          <span class="entry-date"><a href="https://github.com/islamyasser424-design/Amazon-Dashboard" target="_blank" rel="noopener noreferrer">GitHub Repo</a></span>
+        </div>
+        <div class="project-tools"><strong>Tools:</strong> Power BI, Power Query, Multimodal Logistics Benchmarking, Fulfillment KPIs</div>
+        <ul class="bullet-list">
+          <li>Standardized multichannel fulfillment records and mapped multimodal transit modes (Road, Rail, Air, Sea) against supplier lead times in Power Query; analyzed $577.60K revenue and 46K units sold, evaluating freight spend per unit ($5.55 avg) to curb high-cost air freight reliance.</li>
+        </ul>
+      </div>
+
+      <!-- Project 5: Olist E-Commerce -->
+      <div class="entry-item project-entry">
         <div class="entry-header">
           <span class="entry-role">Olist E-Commerce Performance &amp; Logistics Dashboard</span>
           <span class="entry-date"><a href="https://github.com/islamyasser424-design/Olist-E-Commerce-Dashboard" target="_blank" rel="noopener noreferrer">GitHub Repo</a></span>
         </div>
         <div class="project-tools"><strong>Tools:</strong> Microsoft Excel, Power Pivot, Relational Modeling, KPI Dashboards</div>
         <ul class="bullet-list">
-          <li>Audited 99,441 transactional order records across 3 dedicated analytical views: Financial Overview, Order Breakdown, and Delivery Logistics.</li>
-          <li>Uncovered $1.35M in revenue affected by 7,826 late deliveries (averaging 10 days of delay) and flagged 11,277 underpayment checkout anomalies in Power Pivot.</li>
+          <li>Audited 99,441 transactional order records across 3 dedicated analytical views in Excel Power Pivot; uncovered $1.35M in revenue affected by 7,826 late deliveries (averaging 10 days of delay) and flagged 11,277 underpayment checkout anomalies to prevent financial leakage.</li>
         </ul>
       </div>
 
-      <!-- Project 5: Coffee Sales -->
-      <div class="entry-item">
+      <!-- Project 6: SuperStore -->
+      <div class="entry-item project-entry">
+        <div class="entry-header">
+          <span class="entry-role">SuperStore Business Intelligence &amp; Profitability Analysis</span>
+          <span class="entry-date"><a href="https://github.com/islamyasser424-design/Super-Store-excel-Dashboard" target="_blank" rel="noopener noreferrer">GitHub Repo</a></span>
+        </div>
+        <div class="project-tools"><strong>Tools:</strong> Microsoft Excel, Power Pivot, Relational Modeling, Dynamic Slicers</div>
+        <ul class="bullet-list">
+          <li>Constructed a relational model in Power Pivot joining 9,994 order transactions with product hierarchies and returns; analyzed $2.29M in gross sales (12.47% net margin), identifying top regional profit drivers and highlighting loss-making discounts in Furniture categories.</li>
+        </ul>
+      </div>
+
+      <!-- Project 7: Coffee Sales -->
+      <div class="entry-item project-entry">
         <div class="entry-header">
           <span class="entry-role">Coffee Sales Analytics &amp; Interactive Performance Dashboard</span>
           <span class="entry-date"><a href="https://github.com/islamyasser424-design/Coffee-Sales-Dashboard" target="_blank" rel="noopener noreferrer">GitHub Repo</a></span>
         </div>
         <div class="project-tools"><strong>Tools:</strong> Microsoft Excel, Power Pivot, Relational Data Modeling, Power Query</div>
         <ul class="bullet-list">
-          <li>Structured a relational 1-to-many model in Power Pivot with Power Query ETL pipelines, configuring dynamic slicers and timeline selectors.</li>
-          <li>Evaluated $141,713.50 in revenue across 14,928 transactions and 45,240 items sold, identifying fulfillment splits (In-store vs. Takeaway) and top revenue drivers.</li>
+          <li>Structured a relational 1-to-many model in Power Pivot with Power Query ETL pipelines; evaluated $141,713.50 in revenue across 14,928 transactions and 45,240 items sold, identifying fulfillment splits (In-store vs. Takeaway) and top revenue-generating menu combinations.</li>
         </ul>
       </div>
 
-      <!-- Project 6: Uber Smart Mobility -->
-      <div class="entry-item">
+      <!-- Project 8: Uber Smart Mobility -->
+      <div class="entry-item project-entry">
         <div class="entry-header">
           <span class="entry-role">Uber Smart Mobility &amp; Operational Performance Dashboard</span>
           <span class="entry-date"><a href="https://github.com/islamyasser424-design/Uber-Dashboard" target="_blank" rel="noopener noreferrer">GitHub Repo</a></span>
         </div>
         <div class="project-tools"><strong>Tools:</strong> Power BI, DAX Measures, Power Query, Star Schema</div>
         <ul class="bullet-list">
-          <li>Designed a Star Schema joining ride bookings to vehicle and trip status dimensions, centralizing operational KPIs in a DAX measures repository.</li>
-          <li>Constructed a 5-page operational report quantifying lost distance earnings and isolating driver vs. customer cancellations to optimize dispatch matching.</li>
+          <li>Designed a Star Schema joining ride bookings to vehicle and trip status dimensions, centralizing operational KPIs in a DAX repository; produced a 5-page operational report quantifying lost distance earnings and isolating driver vs. customer drop-offs.</li>
         </ul>
       </div>
     </section>
