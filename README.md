@@ -24,7 +24,7 @@ A modern, highly performant, accessible personal portfolio website and ATS-compl
 ## ✨ Key Highlights
 
 * **Modern Dark Glassmorphism UI:** Built with custom CSS custom properties (variables), high-contrast accessibility standards (WCAG compliant), and fluid typography.
-* **Interactive Project Showcase:** In-depth case studies for 8 verified enterprise dashboards across Power BI, Microsoft Excel, Power Pivot, and Python.
+* **Interactive Project Showcase:** In-depth case studies for 9 verified enterprise dashboards across Power BI, Microsoft Excel, Power Pivot, and Python.
 * **ATS-Compliant Dedicated CV (`cv.html`):** Clean, printable, and downloadable resume page engineered for Applicant Tracking Systems and high-resolution printing.
 * **Responsive Across All Breakpoints:** Handcrafted CSS grid and flexbox architectures delivering a native app feel across ultra-wide monitors, laptops, tablets, and smartphones.
 * **High Performance & Zero Heavy Dependencies:** Built on native web standards (HTML5, Vanilla ES6+ JavaScript, CSS3) with near-instantaneous first-contentful paint (FCP) and optimal SEO structure.
@@ -59,7 +59,7 @@ portfolio/
 ├── css/
 │   └── style.css               # Core styling, animations, tokens & responsive media rules
 ├── js/
-│   └── main.js                 # Dynamic navigation, active link spies, filtering logic
+│   └── script.js               # Dynamic navigation, active link spies, filtering logic
 ├── img/                        # Project screenshots, assets & profile visuals
 ├── index.html                  # Main interactive portfolio landing platform
 ├── cv.html                     # Dedicated ATS-compliant printable CV / Resume page
@@ -71,7 +71,7 @@ portfolio/
 1. **Hero Section:** Value proposition, instant CTA buttons, social handles, and resume downloads.
 2. **About Me:** Operational background, domain experience, and data analytics philosophy.
 3. **Interactive Skills:** Categorized competencies (Business Intelligence, Data Analytics, Relational Databases, Tools).
-4. **Featured Projects:** Deep dive into 8 business intelligence dashboards with KPIs, business problem statements, and GitHub links.
+4. **Featured Projects:** Deep dive into 9 business intelligence dashboards with KPIs, business problem statements, and GitHub links.
 5. **Professional Experience:** Career milestones at Micro Engineering Egypt (MEEG - METI) and iSON Xperiences.
 6. **Analytics Workflow:** 6-step lifecycle (Discovery & Requirements → Data Extraction → Modeling → Dashboard Engineering → QA → Delivery).
 7. **Services & Objective:** Core consulting capabilities and strategic career focus.
@@ -91,6 +91,7 @@ portfolio/
 | **AdventureWorks Executive Suite** | Multi-Region Sales & Customer Cohorts | Power BI, DAX, Relational Schema | [Repo](https://github.com/islamyasser424-design/AdventureWorks-Dashboard) |
 | **Adidas Global Sales Dashboard** | Sales Rep & Reseller Performance | Power BI, DAX, Star Schema | [Repo](https://github.com/islamyasser424-design/Adidas-Dashboard) |
 | **Coffee Sales & Channel Audit** | Retail Operations & Channel Mix | Excel, Power Pivot, Pivot Charts | [Repo](https://github.com/islamyasser424-design/Coffee-Sales-Dashboard) |
+| **HR360 Workforce Intelligence** | People Analytics & Attrition | Power BI (PBIP), DAX, TMDL | [Repo](https://github.com/islamyasser424-design/HR360) |
 
 ---
 
