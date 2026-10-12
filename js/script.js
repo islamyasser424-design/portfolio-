@@ -489,6 +489,121 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ==========================================================================
+     9. Project Screenshot Previews, Salla Multi-Page Switcher & Lightbox Modal
+     ========================================================================== */
+  // Salla Multi-View Tab Switcher
+  const sallaTabBtns = document.querySelectorAll('.salla-tab-btn');
+  const sallaActiveImg = document.getElementById('sallaActiveImg');
+  const sallaGalleryFrame = document.getElementById('sallaGalleryFrame');
+  const sallaZoomBadgeText = document.getElementById('sallaZoomBadgeText');
+
+  if (sallaTabBtns.length > 0 && sallaActiveImg && sallaGalleryFrame) {
+    sallaTabBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        sallaTabBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        const newSrc = btn.getAttribute('data-img');
+        const newTitle = btn.getAttribute('data-title');
+        const newSubtitle = btn.getAttribute('data-subtitle');
+        const newBadge = btn.getAttribute('data-badge') || 'Enlarge Page';
+
+        sallaActiveImg.style.opacity = '0.35';
+        setTimeout(() => {
+          sallaActiveImg.src = newSrc;
+          sallaActiveImg.alt = newTitle;
+          sallaActiveImg.style.opacity = '1';
+        }, 120);
+
+        sallaGalleryFrame.setAttribute('data-img', newSrc);
+        sallaGalleryFrame.setAttribute('data-title', newTitle);
+        sallaGalleryFrame.setAttribute('data-subtitle', newSubtitle);
+        if (sallaZoomBadgeText) {
+          sallaZoomBadgeText.textContent = newBadge;
+        }
+      });
+    });
+  }
+
+  // Lightbox Modal Controller
+  const lightboxModal = document.getElementById('imageLightboxModal');
+  const lightboxBackdrop = document.getElementById('lightboxBackdrop');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+  const lightboxImage = document.getElementById('lightboxImage');
+  const lightboxTitle = document.getElementById('lightboxTitle');
+  const lightboxDesc = document.getElementById('lightboxDesc');
+  const galleryItems = Array.from(document.querySelectorAll('[data-gallery-item]'));
+
+  let currentGalleryIndex = 0;
+
+  const openLightbox = (index) => {
+    if (!lightboxModal || !lightboxImage || galleryItems.length === 0) return;
+    currentGalleryIndex = (index + galleryItems.length) % galleryItems.length;
+    const item = galleryItems[currentGalleryIndex];
+    const imgSrc = item.getAttribute('data-img');
+    const title = item.getAttribute('data-title') || 'Dashboard Preview';
+    const subtitle = item.getAttribute('data-subtitle') || '';
+
+    lightboxImage.src = imgSrc;
+    lightboxImage.alt = title;
+    if (lightboxTitle) lightboxTitle.textContent = title;
+    if (lightboxDesc) lightboxDesc.textContent = subtitle;
+
+    lightboxModal.classList.add('active');
+    lightboxModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    if (lightboxClose) lightboxClose.focus();
+  };
+
+  const closeLightbox = () => {
+    if (!lightboxModal) return;
+    lightboxModal.classList.remove('active');
+    lightboxModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  const showNextLightbox = () => {
+    openLightbox(currentGalleryIndex + 1);
+  };
+
+  const showPrevLightbox = () => {
+    openLightbox(currentGalleryIndex - 1);
+  };
+
+  galleryItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      openLightbox(index);
+    });
+
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox(index);
+      }
+    });
+  });
+
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
+  if (lightboxPrev) lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); showPrevLightbox(); });
+  if (lightboxNext) lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); showNextLightbox(); });
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightboxModal || !lightboxModal.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') showNextLightbox();
+    if (e.key === 'ArrowLeft') showPrevLightbox();
+  });
+
   /**
    * Simple HTML escaping helper for safe feedback rendering.
    * @param {string} str 
