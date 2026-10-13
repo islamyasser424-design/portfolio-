@@ -24,7 +24,7 @@ A modern, highly performant, accessible personal portfolio website and ATS-compl
 ## ✨ Key Highlights
 
 * **Modern Dark Glassmorphism UI:** Built with custom CSS custom properties (variables), high-contrast accessibility standards (WCAG compliant), and fluid typography.
-* **Interactive Project Showcase:** In-depth case studies for 10 verified enterprise dashboards across Power BI, Microsoft Excel, Power Pivot, and Python.
+* **Interactive Project Showcase:** In-depth case studies for 11 verified enterprise dashboards across Power BI, Microsoft Excel, Google Sheets, Google Apps Script, and interactive Web BI.
 * **ATS-Compliant Dedicated CV (`cv.html`):** Clean, printable, and downloadable resume page engineered for Applicant Tracking Systems and high-resolution printing.
 * **Responsive Across All Breakpoints:** Handcrafted CSS grid and flexbox architectures delivering a native app feel across ultra-wide monitors, laptops, tablets, and smartphones.
 * **High Performance & Zero Heavy Dependencies:** Built on native web standards (HTML5, Vanilla ES6+ JavaScript, CSS3) with near-instantaneous first-contentful paint (FCP) and optimal SEO structure.
@@ -93,6 +93,7 @@ portfolio/
 | **Coffee Sales & Channel Audit** | Retail Operations & Channel Mix | Excel, Power Pivot, Pivot Charts | [Repo](https://github.com/islamyasser424-design/Coffee-Sales-Dashboard) |
 | **HR360 Workforce Intelligence** | People Analytics & Attrition | Power BI (PBIP), DAX, TMDL | [Repo](https://github.com/islamyasser424-design/HR360) |
 | **Salla Contact Center Operations** | Call Center & Workforce Analytics | Power BI, Dynamic HTML with DAX, CSS Grid, 3D Flip Cards, Deneb | [Repo](https://github.com/islamyasser424-design/SALla-call-center-Dashboard) |
+| **Walmart Retail Sales Intelligence** | Retail Sales & Macroeconomic Forecasting | Google Sheets, Apps Script, Web BI, Chart.js | [Repo](https://github.com/islamyasser424-design/Walmart-Sales-) / [Live Demo](https://islamyasser424-design.github.io/Walmart-Sales-/) |
 
 ---
 
