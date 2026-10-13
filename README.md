@@ -92,7 +92,7 @@ portfolio/
 | **Adidas Global Sales Dashboard** | Sales Rep & Reseller Performance | Power BI, DAX, Star Schema | [Repo](https://github.com/islamyasser424-design/Adidas-Dashboard) |
 | **Coffee Sales & Channel Audit** | Retail Operations & Channel Mix | Excel, Power Pivot, Pivot Charts | [Repo](https://github.com/islamyasser424-design/Coffee-Sales-Dashboard) |
 | **HR360 Workforce Intelligence** | People Analytics & Attrition | Power BI (PBIP), DAX, TMDL | [Repo](https://github.com/islamyasser424-design/HR360) |
-| **Salla Contact Center Operations** | Call Center & Workforce Analytics | Power BI, Deneb, HTML/CSS, Append | [Repo](https://github.com/islamyasser424-design/SALla-call-center-Dashboard) |
+| **Salla Contact Center Operations** | Call Center & Workforce Analytics | Power BI, Dynamic HTML with DAX, CSS Grid, 3D Flip Cards, Deneb | [Repo](https://github.com/islamyasser424-design/SALla-call-center-Dashboard) |
 
 ---
 
