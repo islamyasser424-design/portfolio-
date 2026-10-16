@@ -172,80 +172,93 @@
 
         <!-- Hero Interactive Visual: Analytical Dashboard Mockup -->
         <div class="hero-visual reveal-on-scroll">
-          <div class="dashboard-mockup glass-card">
+          <div class="dashboard-mockup glass-card" id="dashboardMockup">
             <!-- Window Header -->
             <div class="mockup-header">
-              <div class="mockup-dots" aria-hidden="true">
-                <span class="dot dot-red"></span>
-                <span class="dot dot-yellow"></span>
-                <span class="dot dot-green"></span>
+              <div class="mockup-dots" aria-label="Mockup window controls">
+                <span class="dot dot-red" role="button" tabindex="0" title="Reset to Default Model" aria-label="Reset Model"></span>
+                <span class="dot dot-yellow" role="button" tabindex="0" title="Toggle Compact Mode" aria-label="Toggle Compact Mode"></span>
+                <span class="dot dot-green" role="button" tabindex="0" title="Run Live Query" aria-label="Run Query"></span>
               </div>
-              <div class="mockup-title-tab">
+              <div class="mockup-title-tab" title="Active Power BI Model File">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-                <span>Operational_Analytics_V2.pbix</span>
+                <span class="mockup-file-name" id="mockupFileName">Operational_Analytics_V2.pbix</span>
               </div>
-              <div class="mockup-status-badge">
-                <span class="mini-pulse"></span>
-                <span>Active Model</span>
+              <div class="mockup-header-actions">
+                <button class="mockup-refresh-btn" id="mockupRefreshBtn" type="button" title="Execute Query &amp; Refresh Model" aria-label="Refresh Query">
+                  <svg class="refresh-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 21h5v-5"/></svg>
+                  <span class="refresh-text" id="mockupRefreshText">Run Query</span>
+                </button>
+                <div class="mockup-status-badge" id="mockupStatusBadge" title="Engine Status">
+                  <span class="mini-pulse"></span>
+                  <span id="mockupStatusText">Active Model</span>
+                </div>
               </div>
             </div>
 
             <!-- DAX Formula Bar -->
-            <div class="dax-bar">
+            <div class="dax-bar" id="mockupDaxBar">
               <span class="dax-fx" aria-hidden="true">fx</span>
-              <code class="dax-code" title="DAX Measure Formula">Late_Delivery_Leakage = CALCULATE(SUM(Orders[Revenue]), Orders[DeliveryDelayDays] &gt; 0, Orders[OrderStatus] = "Delivered")</code>
+              <div class="dax-code-wrap">
+                <code class="dax-code" id="mockupDaxCode" title="DAX Measure Formula">Late_Delivery_Leakage = CALCULATE(SUM(Orders[FreightValue]), Orders[DeliveryDelayDays] &gt; 0, Orders[OrderStatus] = "Delivered")</code>
+              </div>
+              <button class="copy-dax-btn" id="copyDaxBtn" type="button" title="Copy DAX to Clipboard" aria-label="Copy DAX Measure">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                <span class="copy-tooltip" id="copyDaxTooltip">Copy</span>
+              </button>
             </div>
 
             <!-- KPI Metric Grid inside Mockup -->
-            <div class="mockup-metrics">
-              <div class="metric-card">
-                <span class="metric-label">Orders Audited</span>
+            <div class="mockup-metrics" id="mockupMetricsGrid">
+              <div class="metric-card active-kpi-card" data-kpi-idx="0" role="button" tabindex="0" title="Click to highlight in chart">
+                <span class="metric-label" id="kpiLabel0">Orders Audited</span>
                 <div class="metric-value-row">
-                  <span class="metric-number text-cyan" data-counter="99441" data-format="comma">99,441</span>
-                  <span class="metric-pill pill-up">+100% Star Schema</span>
+                  <span class="metric-number text-cyan" id="kpiVal0" data-counter="99441" data-format="comma">99,441</span>
+                  <span class="metric-pill pill-up" id="kpiPill0">+100% Star Schema</span>
                 </div>
-                <span class="metric-sub">Olist E-Commerce Project</span>
+                <span class="metric-sub" id="kpiSub0">Olist E-Commerce Project</span>
               </div>
 
-              <div class="metric-card">
-                <span class="metric-label">Financial Analyzed</span>
+              <div class="metric-card" data-kpi-idx="1" role="button" tabindex="0" title="Click to highlight in chart">
+                <span class="metric-label" id="kpiLabel1">Financial Analyzed</span>
                 <div class="metric-value-row">
-                  <span class="metric-number text-blue" data-counter="2.29" data-prefix="$" data-suffix="M" data-decimals="2">$2.29M</span>
-                  <span class="metric-pill pill-neutral">9,994 Rows</span>
+                  <span class="metric-number text-blue" id="kpiVal1" data-counter="2.29" data-prefix="$" data-suffix="M" data-decimals="2">$2.29M</span>
+                  <span class="metric-pill pill-neutral" id="kpiPill1">9,994 Rows</span>
                 </div>
-                <span class="metric-sub">SuperStore BI Dashboard</span>
+                <span class="metric-sub" id="kpiSub1">SuperStore BI Dashboard</span>
               </div>
 
-              <div class="metric-card">
-                <span class="metric-label">Operational Quality</span>
+              <div class="metric-card" data-kpi-idx="2" role="button" tabindex="0" title="Click to highlight in chart">
+                <span class="metric-label" id="kpiLabel2">Operational Quality</span>
                 <div class="metric-value-row">
-                  <span class="metric-number text-emerald" data-counter="99.4" data-suffix="%" data-decimals="1">99.4%</span>
-                  <span class="metric-pill pill-emerald">QA Benchmark</span>
+                  <span class="metric-number text-emerald" id="kpiVal2" data-counter="99.4" data-suffix="%" data-decimals="1">99.4%</span>
+                  <span class="metric-pill pill-emerald" id="kpiPill2">QA Benchmark</span>
                 </div>
-                <span class="metric-sub">Multimodal Annotation QA</span>
+                <span class="metric-sub" id="kpiSub2">Multimodal Annotation QA</span>
               </div>
 
-              <div class="metric-card">
-                <span class="metric-label">Interactive Reports</span>
+              <div class="metric-card" data-kpi-idx="3" role="button" tabindex="0" title="Click to highlight in chart">
+                <span class="metric-label" id="kpiLabel3">Interactive Reports</span>
                 <div class="metric-value-row">
-                  <span class="metric-number text-amber" data-counter="9" data-suffix=" Pages">9 Pages</span>
-                  <span class="metric-pill pill-blue">What-If Scenarios</span>
+                  <span class="metric-number text-amber" id="kpiVal3" data-counter="9" data-suffix=" Pages">9 Pages</span>
+                  <span class="metric-pill pill-blue" id="kpiPill3">What-If Scenarios</span>
                 </div>
-                <span class="metric-sub">Logistics Vision Fleet Model</span>
+                <span class="metric-sub" id="kpiSub3">Logistics Vision Fleet Model</span>
               </div>
             </div>
 
             <!-- SVG Data Chart Visualization -->
-            <div class="mockup-chart-area">
+            <div class="mockup-chart-area" id="mockupChartArea">
               <div class="chart-header">
-                <span class="chart-title">Revenue & SLA Delivery Variance (Monthly Trend)</span>
+                <span class="chart-title" id="mockupChartTitle">Revenue &amp; SLA Delivery Variance (Monthly Trend)</span>
                 <div class="chart-legend">
-                  <span class="legend-item"><span class="legend-dot dot-cyan"></span> Delivered On-Time</span>
-                  <span class="legend-item"><span class="legend-dot dot-amber"></span> Delayed SLA</span>
+                  <span class="legend-item" id="legendItem1"><span class="legend-dot dot-cyan"></span> <span id="legendText1">Delivered On-Time</span></span>
+                  <span class="legend-item" id="legendItem2"><span class="legend-dot dot-amber"></span> <span id="legendText2">Delayed SLA</span></span>
                 </div>
               </div>
-              <div class="svg-chart-container">
-                <svg viewBox="0 0 500 140" class="analytics-sparkline" preserveAspectRatio="none" aria-label="Analytical trend visualization chart" role="img">
+              <div class="svg-chart-container" id="svgChartContainer">
+                <div class="chart-tooltip-badge" id="chartTooltipBadge" aria-hidden="true"></div>
+                <svg viewBox="0 0 500 140" class="analytics-sparkline" id="mockupSparklineSvg" preserveAspectRatio="none" aria-label="Analytical trend visualization chart" role="img">
                   <defs>
                     <linearGradient id="cyanGrad" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.45" />
@@ -262,28 +275,48 @@
                   <line x1="0" y1="100" x2="500" y2="100" stroke="currentColor" stroke-opacity="0.08" stroke-dasharray="4 4" />
                   
                   <!-- Area Fill -->
-                  <polygon points="0,120 0,85 50,75 100,80 150,55 200,60 250,35 300,45 350,25 400,30 450,15 500,20 500,120" fill="url(#cyanGrad)" />
+                  <polygon id="mockupAreaPolygon" points="0,120 0,85 50,75 100,80 150,55 200,60 250,35 300,45 350,25 400,30 450,15 500,20 500,120" fill="url(#cyanGrad)" />
                   
                   <!-- Main Cyan Trendline -->
-                  <polyline points="0,85 50,75 100,80 150,55 200,60 250,35 300,45 350,25 400,30 450,15 500,20" fill="none" stroke="#06b6d4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <polyline id="mockupPolyline1" class="trendline-primary" points="0,85 50,75 100,80 150,55 200,60 250,35 300,45 350,25 400,30 450,15 500,20" fill="none" stroke="#06b6d4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
                   
                   <!-- Secondary SLA Warning Line -->
-                  <polyline points="0,110 50,105 100,102 150,95 200,90 250,82 300,80 350,70 400,65 450,58 500,52" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-dasharray="4 3" stroke-linecap="round" />
+                  <polyline id="mockupPolyline2" class="trendline-secondary" points="0,110 50,105 100,102 150,95 200,90 250,82 300,80 350,70 400,65 450,58 500,52" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-dasharray="4 3" stroke-linecap="round" />
 
-                  <!-- Highlighting Data Points -->
-                  <circle cx="250" cy="35" r="4.5" fill="#06b6d4" stroke="#090d16" stroke-width="2" />
-                  <circle cx="450" cy="15" r="4.5" fill="#06b6d4" stroke="#090d16" stroke-width="2" />
-                  <circle cx="500" cy="20" r="5" fill="#10b981" stroke="#090d16" stroke-width="2" />
+                  <!-- Highlighting Data Points Group -->
+                  <g id="mockupPointsGroup">
+                    <circle cx="250" cy="35" r="4.5" fill="#06b6d4" stroke="#090d16" stroke-width="2" />
+                    <circle cx="450" cy="15" r="4.5" fill="#06b6d4" stroke="#090d16" stroke-width="2" />
+                    <circle cx="500" cy="20" r="5" fill="#10b981" stroke="#090d16" stroke-width="2" />
+                  </g>
+
+                  <!-- Dynamic Interactive Scanner Crosshair & Active Point -->
+                  <line id="chartCrosshair" x1="0" y1="0" x2="0" y2="140" stroke="rgba(6, 182, 212, 0.45)" stroke-width="1.5" stroke-dasharray="3 3" opacity="0" pointer-events="none" />
+                  <circle id="activeScanPoint" cx="0" cy="0" r="6" fill="#06b6d4" stroke="#ffffff" stroke-width="2" opacity="0" pointer-events="none" />
                 </svg>
               </div>
             </div>
 
-            <!-- Card Bottom Bar: Quick Filter Slices -->
+            <!-- Card Bottom Bar: Interactive Model Switcher Tabs -->
             <div class="mockup-footer">
-              <span class="filter-tag active-tag">All Channels</span>
-              <span class="filter-tag">Dimension: Star Schema</span>
-              <span class="filter-tag">Metric: Delivered</span>
-              <span class="filter-status">Auto-refreshed via Power Query</span>
+              <div class="model-switch-group" role="tablist" aria-label="Interactive Analytical Models">
+                <button type="button" class="model-tab-btn active" role="tab" aria-selected="true" data-model="ecommerce" title="Olist E-Commerce Logistics &amp; Star Schema">
+                  <span class="tab-indicator"></span>
+                  <span>E-Commerce Logistics</span>
+                </button>
+                <button type="button" class="model-tab-btn" role="tab" aria-selected="false" data-model="callcenter" title="Salla Contact Center &amp; Customer Operations">
+                  <span class="tab-indicator"></span>
+                  <span>Call Center Operations</span>
+                </button>
+                <button type="button" class="model-tab-btn" role="tab" aria-selected="false" data-model="financial" title="SuperStore Executive BI &amp; Financial Intelligence">
+                  <span class="tab-indicator"></span>
+                  <span>Financial Intelligence</span>
+                </button>
+              </div>
+              <div class="filter-status">
+                <span class="live-dot" aria-hidden="true"></span>
+                <span id="modelRefreshInfo">Auto-refreshed via Power Query</span>
+              </div>
             </div>
           </div>
         </div>
