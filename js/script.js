@@ -218,6 +218,82 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
+     5b. Top Reading Scroll Progress Bar
+     ========================================================================== */
+  const scrollProgressBar = document.getElementById('scrollProgressBar');
+  const updateScrollProgress = () => {
+    if (!scrollProgressBar) return;
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    scrollProgressBar.style.width = `${Math.min(progress, 100)}%`;
+  };
+
+  window.addEventListener('scroll', updateScrollProgress, { passive: true });
+  updateScrollProgress();
+
+  /* ==========================================================================
+     5c. Animated Numerical Metric Counters (CountUp on Scroll)
+     ========================================================================== */
+  const counterElements = document.querySelectorAll('[data-counter]');
+
+  const animateCounter = (el) => {
+    const target = parseFloat(el.getAttribute('data-counter'));
+    if (isNaN(target)) return;
+
+    const prefix = el.getAttribute('data-prefix') || '';
+    const suffix = el.getAttribute('data-suffix') || '';
+    const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+    const useComma = el.getAttribute('data-format') === 'comma';
+    const duration = parseInt(el.getAttribute('data-duration') || '1800', 10);
+
+    const startTime = performance.now();
+
+    const updateCount = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      const ease = 1 - Math.pow(1 - progress, 3);
+      const current = target * ease;
+
+      const formattedVal = useComma
+        ? Math.round(current).toLocaleString('en-US')
+        : current.toFixed(decimals);
+
+      el.textContent = `${prefix}${formattedVal}${suffix}`;
+
+      if (progress < 1) {
+        requestAnimationFrame(updateCount);
+      } else {
+        const finalVal = useComma
+          ? Math.round(target).toLocaleString('en-US')
+          : target.toFixed(decimals);
+        el.textContent = `${prefix}${finalVal}${suffix}`;
+      }
+    };
+
+    requestAnimationFrame(updateCount);
+  };
+
+  if ('IntersectionObserver' in window) {
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.15
+    });
+
+    counterElements.forEach(el => counterObserver.observe(el));
+  } else {
+    counterElements.forEach(el => animateCounter(el));
+  }
+
+  /* ==========================================================================
      6. Accessible Contact Form Validation & Submission
      ========================================================================== */
   const contactForm = document.getElementById('contactForm');
@@ -437,7 +513,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     7. Interactive Project Filtering (All / Power BI / Excel)
+     7. Interactive Project Filtering (All / Power BI / Excel / Google Sheets)
      ========================================================================== */
   const filterButtons = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card[data-category]');
@@ -450,22 +526,64 @@ document.addEventListener('DOMContentLoaded', () => {
       filterButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      // Filter project cards
+      // Filter project cards with staggered entrance animation
+      let visibleIdx = 0;
       projectCards.forEach(card => {
         const cardCat = card.getAttribute('data-category');
         if (selectedFilter === 'all' || cardCat === selectedFilter) {
           card.classList.remove('is-hidden');
-          // Re-trigger reveal animation
+          card.classList.remove('filter-animate-in');
+          // Force layout reflow to retrigger CSS animation cleanly
+          void card.offsetWidth;
+          card.style.animationDelay = `${visibleIdx * 45}ms`;
+          card.classList.add('filter-animate-in');
           card.classList.add('reveal-visible');
+          visibleIdx++;
         } else {
           card.classList.add('is-hidden');
+          card.classList.remove('filter-animate-in');
         }
       });
     });
   });
 
   /* ==========================================================================
-     8. 3D Dynamic Tilt Interaction on Profile Avatar
+     8. Interactive Cursor Spotlight Glow on Glass Cards
+     ========================================================================== */
+  const isFinePointer = window.matchMedia('(pointer: fine)').matches;
+  if (isFinePointer) {
+    const glassCards = document.querySelectorAll('.glass-card');
+    let ticking = false;
+
+    window.addEventListener('mousemove', (e) => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const clientX = e.clientX;
+          const clientY = e.clientY;
+
+          glassCards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            if (
+              clientX >= rect.left - 80 &&
+              clientX <= rect.right + 80 &&
+              clientY >= rect.top - 80 &&
+              clientY <= rect.bottom + 80
+            ) {
+              const x = clientX - rect.left;
+              const y = clientY - rect.top;
+              card.style.setProperty('--mouse-x', `${x}px`);
+              card.style.setProperty('--mouse-y', `${y}px`);
+            }
+          });
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+  /* ==========================================================================
+     8b. 3D Dynamic Tilt Interaction on Profile Avatar
      ========================================================================== */
   const avatarWrapper = document.getElementById('profileAvatarWrapper');
   const avatarFrame = avatarWrapper ? avatarWrapper.querySelector('.avatar-frame') : null;
