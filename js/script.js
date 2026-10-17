@@ -513,39 +513,109 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     7. Interactive Project Filtering (All / Power BI / Excel / Google Sheets)
+     7. Unified Project Search & Category Filtering System
      ========================================================================== */
   const filterButtons = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card[data-category]');
+  const projectSearchInput = document.getElementById('projectSearchInput');
+  const clearSearchBtn = document.getElementById('clearSearchBtn');
+  const searchResultsCount = document.getElementById('projectSearchResultsCount');
 
+  let currentCategory = 'all';
+  let currentSearchQuery = '';
+
+  const applyProjectFilters = () => {
+    let visibleIdx = 0;
+    let matchCount = 0;
+
+    projectCards.forEach(card => {
+      const cardCat = card.getAttribute('data-category');
+      const matchesCategory = (currentCategory === 'all' || cardCat === currentCategory);
+
+      // Search matching across card title, tool tags, and textual content
+      let matchesSearch = true;
+      if (currentSearchQuery.length > 0) {
+        const titleText = (card.querySelector('.project-title')?.textContent || '').toLowerCase();
+        const toolsText = (card.querySelector('.project-tools-wrap')?.textContent || '').toLowerCase();
+        const bodyText = (card.querySelector('.project-body')?.textContent || '').toLowerCase();
+        const fullCardText = `${titleText} ${toolsText} ${bodyText}`;
+        matchesSearch = fullCardText.includes(currentSearchQuery);
+      }
+
+      if (matchesCategory && matchesSearch) {
+        card.classList.remove('is-hidden');
+        card.classList.remove('filter-animate-in');
+        // Force layout reflow to retrigger CSS animation cleanly
+        void card.offsetWidth;
+        card.style.animationDelay = `${visibleIdx * 40}ms`;
+        card.classList.add('filter-animate-in');
+        card.classList.add('reveal-visible');
+        visibleIdx++;
+        matchCount++;
+      } else {
+        card.classList.add('is-hidden');
+        card.classList.remove('filter-animate-in');
+      }
+    });
+
+    // Update Live Search Feedback
+    if (searchResultsCount) {
+      if (currentSearchQuery.length > 0) {
+        searchResultsCount.style.display = 'block';
+        if (matchCount === 0) {
+          searchResultsCount.innerHTML = `No projects found matching "<strong>${escapeHtml(currentSearchQuery)}</strong>" in the selected view. Try a different keyword or switch to "All Projects".`;
+        } else {
+          searchResultsCount.innerHTML = `Showing <strong>${matchCount}</strong> of <strong>${projectCards.length}</strong> projects matching "<strong>${escapeHtml(currentSearchQuery)}</strong>"`;
+        }
+      } else {
+        searchResultsCount.style.display = 'none';
+        searchResultsCount.innerHTML = '';
+      }
+    }
+
+    // Toggle clear button
+    if (clearSearchBtn) {
+      clearSearchBtn.style.display = currentSearchQuery.length > 0 ? 'inline-flex' : 'none';
+    }
+  };
+
+  // Filter Buttons
   filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      const selectedFilter = btn.getAttribute('data-filter');
-
-      // Update active filter button
+      currentCategory = btn.getAttribute('data-filter') || 'all';
       filterButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-
-      // Filter project cards with staggered entrance animation
-      let visibleIdx = 0;
-      projectCards.forEach(card => {
-        const cardCat = card.getAttribute('data-category');
-        if (selectedFilter === 'all' || cardCat === selectedFilter) {
-          card.classList.remove('is-hidden');
-          card.classList.remove('filter-animate-in');
-          // Force layout reflow to retrigger CSS animation cleanly
-          void card.offsetWidth;
-          card.style.animationDelay = `${visibleIdx * 45}ms`;
-          card.classList.add('filter-animate-in');
-          card.classList.add('reveal-visible');
-          visibleIdx++;
-        } else {
-          card.classList.add('is-hidden');
-          card.classList.remove('filter-animate-in');
-        }
-      });
+      applyProjectFilters();
     });
   });
+
+  // Search Input Listener
+  if (projectSearchInput) {
+    projectSearchInput.addEventListener('input', (e) => {
+      currentSearchQuery = e.target.value.trim().toLowerCase();
+      applyProjectFilters();
+    });
+
+    projectSearchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        projectSearchInput.value = '';
+        currentSearchQuery = '';
+        applyProjectFilters();
+      }
+    });
+  }
+
+  // Clear Search Button
+  if (clearSearchBtn) {
+    clearSearchBtn.addEventListener('click', () => {
+      if (projectSearchInput) {
+        projectSearchInput.value = '';
+        projectSearchInput.focus();
+      }
+      currentSearchQuery = '';
+      applyProjectFilters();
+    });
+  }
 
   /* ==========================================================================
      8. Interactive Cursor Spotlight Glow on Glass Cards
@@ -1080,6 +1150,79 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape') closeLightbox();
     if (e.key === 'ArrowRight') showNextLightbox();
     if (e.key === 'ArrowLeft') showPrevLightbox();
+  });
+
+  /* ==========================================================================
+     16. Salla Contact Center Deep-Dive Case Study Modal Controller
+     ========================================================================== */
+  const sallaModal = document.getElementById('sallaCaseStudyModal');
+  const openSallaBtn = document.getElementById('openSallaCaseStudyBtn');
+  const closeSallaBtn = document.getElementById('caseStudyCloseBtn');
+  const doneSallaBtn = document.getElementById('caseStudyDoneBtn');
+  const sallaBackdrop = document.getElementById('caseStudyBackdrop');
+  const caseStudyTabBtns = document.querySelectorAll('.case-study-tab-btn');
+  const caseStudyPanels = document.querySelectorAll('.case-study-panel');
+
+  const openSallaModal = () => {
+    if (!sallaModal) return;
+    sallaModal.classList.add('active');
+    sallaModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if (closeSallaBtn) closeSallaBtn.focus();
+  };
+
+  const closeSallaModal = () => {
+    if (!sallaModal) return;
+    sallaModal.classList.remove('active');
+    sallaModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (openSallaBtn) openSallaBtn.focus();
+  };
+
+  if (openSallaBtn) {
+    openSallaBtn.addEventListener('click', openSallaModal);
+  }
+
+  if (closeSallaBtn) {
+    closeSallaBtn.addEventListener('click', closeSallaModal);
+  }
+
+  if (doneSallaBtn) {
+    doneSallaBtn.addEventListener('click', closeSallaModal);
+  }
+
+  if (sallaBackdrop) {
+    sallaBackdrop.addEventListener('click', closeSallaModal);
+  }
+
+  // Tab switching inside Salla Case Study Modal
+  caseStudyTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetTab = btn.getAttribute('data-tab');
+      if (!targetTab) return;
+
+      caseStudyTabBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      caseStudyPanels.forEach(panel => {
+        if (panel.id === targetTab) {
+          panel.classList.add('active');
+        } else {
+          panel.classList.remove('active');
+        }
+      });
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!sallaModal || !sallaModal.classList.contains('active')) return;
+    if (e.key === 'Escape') {
+      closeSallaModal();
+    }
   });
 
   /**
