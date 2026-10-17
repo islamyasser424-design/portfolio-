@@ -1225,6 +1225,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  /* ==========================================================================
+     17. Services 3D Flip Cards Controller (Click, Tap & Keyboard Support)
+     ========================================================================== */
+  const serviceFlipCards = document.querySelectorAll('.service-flip-card');
+  serviceFlipCards.forEach(card => {
+    // Click or tap to toggle flip state (especially useful on touch devices)
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a') || e.target.closest('button')) return;
+      card.classList.toggle('is-flipped');
+    });
+
+    // Keyboard accessibility: Enter or Space flips the card
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.classList.toggle('is-flipped');
+      }
+    });
+  });
+
   /**
    * Simple HTML escaping helper for safe feedback rendering.
    * @param {string} str 
