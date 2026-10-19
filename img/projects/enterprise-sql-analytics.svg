@@ -1,0 +1,368 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 850" width="1440" height="850">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#070a12" />
+    </linearGradient>
+
+    <!-- Card Background Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95" />
+    </linearGradient>
+
+    <!-- Header Gradient for Fact Table -->
+    <linearGradient id="factHeaderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+
+    <!-- Header Gradient for Dim Tables -->
+    <linearGradient id="dimHeaderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0d9488" />
+      <stop offset="100%" stop-color="#0f766e" />
+    </linearGradient>
+
+    <!-- Query Panel Header Gradient -->
+    <linearGradient id="queryHeaderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+
+    <!-- Subtle Grid Pattern -->
+    <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.75" stroke-opacity="0.4"/>
+    </pattern>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="cardShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+
+    <filter id="glowBlue" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+    .font-mono { font-family: "Cascadia Code", "Fira Code", Consolas, "Courier New", monospace; }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="1440" height="850" fill="url(#bgGrad)" />
+  <rect width="1440" height="850" fill="url(#gridPattern)" />
+
+  <!-- Window Header Bar (macOS / IDE Window Style) -->
+  <rect x="0" y="0" width="1440" height="54" fill="#0f172a" />
+  <line x1="0" y1="54" x2="1440" y2="54" stroke="#334155" stroke-width="1" />
+  
+  <!-- Window Control Dots -->
+  <circle cx="30" cy="27" r="6.5" fill="#ef4444" />
+  <circle cx="50" cy="27" r="6.5" fill="#f59e0b" />
+  <circle cx="70" cy="27" r="6.5" fill="#10b981" />
+
+  <!-- Window Title -->
+  <text x="720" y="32" text-anchor="middle" fill="#94a3b8" font-size="13.5" font-weight="600" class="font-sans" letter-spacing="0.5">
+    MySQL Enterprise Studio &bull; Sales_Quiz Database &bull; Star Schema Dimensional Model &amp; CTE Analytics
+  </text>
+
+  <!-- Live Status Badge -->
+  <g transform="translate(1250, 16)">
+    <rect width="160" height="24" rx="12" fill="#064e3b" stroke="#059669" stroke-width="1" />
+    <circle cx="16" cy="12" r="4" fill="#34d399" />
+    <text x="28" y="16" fill="#34d399" font-size="11" font-weight="700" class="font-sans">CONNECTED: MySQL 8.0</text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- LEFT COLUMN: FIVE-TABLE RELATIONAL STAR SCHEMA (X: 30 to 670)            -->
+  <!-- ========================================================================= -->
+
+  <g transform="translate(30, 72)">
+    <!-- Section Title -->
+    <text x="0" y="16" fill="#f8fafc" font-size="15" font-weight="700" class="font-sans" letter-spacing="0.5">
+      RELATIONAL STAR SCHEMA ARCHITECTURE
+    </text>
+    <text x="360" y="16" fill="#38bdf8" font-size="11.5" font-weight="600" class="font-mono">
+      [1 FACT &bull; 4 DIMENSIONS &bull; 100% INTEGRITY]
+    </text>
+
+    <!-- Schema Container Canvas -->
+    <rect x="0" y="28" width="650" height="720" rx="8" fill="#0d1424" stroke="#1e293b" stroke-width="1.5" filter="url(#cardShadow)" />
+
+    <!-- Relationship Lines (Connecting Fact to Dimensions) -->
+    <!-- Customers to Sales -->
+    <path d="M 270 115 L 325 115 L 325 365 L 280 365" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,4" opacity="0.8" />
+    <!-- Categories to Products -->
+    <path d="M 135 600 L 135 635 L 40 L 635 L 40 450" fill="none" stroke="#2dd4bf" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.7" />
+    <!-- Products to Sales -->
+    <path d="M 270 415 L 340 415" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,4" opacity="0.8" />
+    <!-- Employees to Sales -->
+    <path d="M 495 190 L 495 285" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,4" opacity="0.8" />
+
+    <!-- 1. DIMENSION TABLE: CUSTOMERS (Top Left) -->
+    <g transform="translate(20, 48)">
+      <rect width="250" height="155" rx="6" fill="#131c31" stroke="#0d9488" stroke-width="1.5" />
+      <path d="M 0 6 Q 0 0 6 0 L 244 0 Q 250 0 250 6 L 250 28 L 0 28 Z" fill="url(#dimHeaderGrad)" />
+      <text x="12" y="19" fill="#ffffff" font-size="12" font-weight="700" class="font-sans">dim_customers (PK: customer_id)</text>
+      
+      <g transform="translate(12, 45)" font-size="11" class="font-mono" fill="#e2e8f0">
+        <text y="0"><tspan fill="#f59e0b" font-weight="700">PK  </tspan>customer_id     <tspan fill="#94a3b8">INT (AUTO)</tspan></text>
+        <text y="22"><tspan fill="#38bdf8">    </tspan>full_name       <tspan fill="#94a3b8">VARCHAR(100)</tspan></text>
+        <text y="44"><tspan fill="#38bdf8">    </tspan>email           <tspan fill="#94a3b8">VARCHAR(150)</tspan></text>
+        <text y="66"><tspan fill="#38bdf8">    </tspan>city            <tspan fill="#94a3b8">VARCHAR(50)</tspan></text>
+        <text y="88"><tspan fill="#38bdf8">    </tspan>signup_date     <tspan fill="#94a3b8">DATE</tspan></text>
+      </g>
+    </g>
+
+    <!-- 2. DIMENSION TABLE: EMPLOYEES (Top Right) -->
+    <g transform="translate(370, 48)">
+      <rect width="260" height="135" rx="6" fill="#131c31" stroke="#0d9488" stroke-width="1.5" />
+      <path d="M 0 6 Q 0 0 6 0 L 254 0 Q 260 0 260 6 L 260 28 L 0 28 Z" fill="url(#dimHeaderGrad)" />
+      <text x="12" y="19" fill="#ffffff" font-size="12" font-weight="700" class="font-sans">dim_employees (PK: employee_id)</text>
+      
+      <g transform="translate(12, 45)" font-size="11" class="font-mono" fill="#e2e8f0">
+        <text y="0"><tspan fill="#f59e0b" font-weight="700">PK  </tspan>employee_id     <tspan fill="#94a3b8">INT (AUTO)</tspan></text>
+        <text y="24"><tspan fill="#38bdf8">    </tspan>employee_name   <tspan fill="#94a3b8">VARCHAR(100)</tspan></text>
+        <text y="48"><tspan fill="#38bdf8">    </tspan>department      <tspan fill="#94a3b8">VARCHAR(80)</tspan></text>
+        <text y="70" fill="#10b981" font-size="10">5 Sales Personnel Benchmarked</text>
+      </g>
+    </g>
+
+    <!-- 3. CENTRAL FACT TABLE: SALES (Center Right) -->
+    <g transform="translate(340, 285)">
+      <rect width="290" height="235" rx="6" fill="#17223b" stroke="#3b82f6" stroke-width="2" filter="url(#glowBlue)" />
+      <path d="M 0 6 Q 0 0 6 0 L 284 0 Q 290 0 290 6 L 290 32 L 0 32 Z" fill="url(#factHeaderGrad)" />
+      <text x="14" y="21" fill="#ffffff" font-size="13" font-weight="800" class="font-sans">fact_sales (120 Granular Transactions)</text>
+      
+      <g transform="translate(14, 52)" font-size="11" class="font-mono" fill="#f8fafc">
+        <text y="0"><tspan fill="#f59e0b" font-weight="700">PK  </tspan>sale_id          <tspan fill="#94a3b8">INT (AUTO)</tspan></text>
+        <text y="22"><tspan fill="#60a5fa" font-weight="700">FK  </tspan>customer_id      <tspan fill="#94a3b8">INT &rarr; customers</tspan></text>
+        <text y="44"><tspan fill="#60a5fa" font-weight="700">FK  </tspan>product_id       <tspan fill="#94a3b8">INT &rarr; products</tspan></text>
+        <text y="66"><tspan fill="#60a5fa" font-weight="700">FK  </tspan>employee_id      <tspan fill="#94a3b8">INT &rarr; employees</tspan></text>
+        <text y="88"><tspan fill="#34d399">    </tspan>quantity         <tspan fill="#94a3b8">INT</tspan></text>
+        <text y="110"><tspan fill="#34d399">    </tspan>discount         <tspan fill="#94a3b8">DECIMAL(5,2)</tspan></text>
+        <text y="132"><tspan fill="#34d399">    </tspan>payment_method   <tspan fill="#94a3b8">VARCHAR(30)</tspan></text>
+        <text y="154"><tspan fill="#34d399">    </tspan>sale_date        <tspan fill="#94a3b8">DATE (2024)</tspan></text>
+      </g>
+    </g>
+
+    <!-- 4. DIMENSION TABLE: PRODUCTS (Center Left) -->
+    <g transform="translate(20, 260)">
+      <rect width="250" height="165" rx="6" fill="#131c31" stroke="#0d9488" stroke-width="1.5" />
+      <path d="M 0 6 Q 0 0 6 0 L 244 0 Q 250 0 250 6 L 250 28 L 0 28 Z" fill="url(#dimHeaderGrad)" />
+      <text x="12" y="19" fill="#ffffff" font-size="12" font-weight="700" class="font-sans">dim_products (PK: product_id)</text>
+      
+      <g transform="translate(12, 45)" font-size="11" class="font-mono" fill="#e2e8f0">
+        <text y="0"><tspan fill="#f59e0b" font-weight="700">PK  </tspan>product_id      <tspan fill="#94a3b8">INT (AUTO)</tspan></text>
+        <text y="22"><tspan fill="#38bdf8">    </tspan>product_name    <tspan fill="#94a3b8">VARCHAR(120)</tspan></text>
+        <text y="44"><tspan fill="#34d399">    </tspan>price           <tspan fill="#94a3b8">DECIMAL(10,2)</tspan></text>
+        <text y="66"><tspan fill="#60a5fa" font-weight="700">FK  </tspan>category_id     <tspan fill="#94a3b8">INT &rarr; categories</tspan></text>
+        <text y="92" fill="#38bdf8" font-size="10">25 Products across 5 Verticals</text>
+      </g>
+    </g>
+
+    <!-- 5. DIMENSION TABLE: CATEGORIES (Bottom Left) -->
+    <g transform="translate(20, 480)">
+      <rect width="250" height="115" rx="6" fill="#131c31" stroke="#0d9488" stroke-width="1.5" />
+      <path d="M 0 6 Q 0 0 6 0 L 244 0 Q 250 0 250 6 L 250 28 L 0 28 Z" fill="url(#dimHeaderGrad)" />
+      <text x="12" y="19" fill="#ffffff" font-size="12" font-weight="700" class="font-sans">dim_categories (PK: category_id)</text>
+      
+      <g transform="translate(12, 45)" font-size="11" class="font-mono" fill="#e2e8f0">
+        <text y="0"><tspan fill="#f59e0b" font-weight="700">PK  </tspan>category_id     <tspan fill="#94a3b8">INT (AUTO)</tspan></text>
+        <text y="22"><tspan fill="#38bdf8">    </tspan>category_name   <tspan fill="#94a3b8">VARCHAR(80)</tspan></text>
+        <text y="45" fill="#94a3b8" font-size="10">Electronics, Clothing, Books, Home, Sports</text>
+      </g>
+    </g>
+
+    <!-- Schema Summary Footer Badge -->
+    <g transform="translate(20, 640)">
+      <rect width="610" height="85" rx="6" fill="#111c33" stroke="#2563eb" stroke-width="1" />
+      <text x="16" y="24" fill="#60a5fa" font-size="11" font-weight="700" class="font-sans">ENTERPRISE DATA MODELING HIGHLIGHTS</text>
+      <text x="16" y="46" fill="#cbd5e1" font-size="10.5" class="font-sans">&bull; 3rd Normal Form (3NF) core normalized to Star Schema for high-throughput OLAP analytics</text>
+      <text x="16" y="66" fill="#cbd5e1" font-size="10.5" class="font-sans">&bull; Foreign keys enforced with cascading references &amp; indexed composite joins</text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- RIGHT COLUMN: SQL QUERY ANALYZER & ANALYTICS EXECUTION (X: 710 to 1410)   -->
+  <!-- ========================================================================= -->
+
+  <g transform="translate(710, 72)">
+    <!-- Section Title -->
+    <text x="0" y="16" fill="#f8fafc" font-size="15" font-weight="700" class="font-sans" letter-spacing="0.5">
+      ADVANCED ANALYTICAL SQL ENGINE &bull; CTEs &amp; WINDOW FUNCTIONS
+    </text>
+    <text x="530" y="16" fill="#10b981" font-size="11.5" font-weight="600" class="font-mono">
+      QUERY: Q_EXEC_04.sql
+    </text>
+
+    <!-- Editor Container Canvas -->
+    <rect x="0" y="28" width="700" height="720" rx="8" fill="#0b1120" stroke="#1e293b" stroke-width="1.5" filter="url(#cardShadow)" />
+
+    <!-- Query Tabs -->
+    <g transform="translate(1, 29)">
+      <rect width="210" height="34" fill="#1e293b" rx="4" />
+      <text x="16" y="22" fill="#38bdf8" font-size="11" font-weight="700" class="font-mono">analytics_report.sql &bull;</text>
+      
+      <rect x="215" y="0" width="160" height="34" fill="#0f172a" rx="4" />
+      <text x="230" y="22" fill="#64748b" font-size="11" class="font-mono">star_schema_ddl.sql</text>
+
+      <rect x="380" y="0" width="130" height="34" fill="#0f172a" rx="4" />
+      <text x="395" y="22" fill="#64748b" font-size="11" class="font-mono">indexes.sql</text>
+    </g>
+
+    <!-- Query Code Area -->
+    <g transform="translate(16, 85)" font-size="12" class="font-mono" line-height="1.4">
+      <!-- Line Numbers Column -->
+      <g fill="#475569" text-anchor="end" font-size="11">
+        <text x="20" y="0">01</text>
+        <text x="20" y="20">02</text>
+        <text x="20" y="40">03</text>
+        <text x="20" y="60">04</text>
+        <text x="20" y="80">05</text>
+        <text x="20" y="100">06</text>
+        <text x="20" y="120">07</text>
+        <text x="20" y="140">08</text>
+        <text x="20" y="160">09</text>
+        <text x="20" y="180">10</text>
+        <text x="20" y="200">11</text>
+        <text x="20" y="220">12</text>
+        <text x="20" y="240">13</text>
+        <text x="20" y="260">14</text>
+        <text x="20" y="280">15</text>
+      </g>
+
+      <!-- SQL Syntax Highlighted Code -->
+      <g transform="translate(36, 0)">
+        <text y="0"><tspan fill="#64748b">-- Multi-Table Fact-and-Dimension Aggregation &amp; Window Ranking</tspan></text>
+        <text y="20"><tspan fill="#c084fc">WITH</tspan> <tspan fill="#38bdf8">CustomerRevenueSummary</tspan> <tspan fill="#c084fc">AS</tspan> (</text>
+        <text y="40">  <tspan fill="#c084fc">SELECT</tspan> c.customer_id, c.full_name, c.city,</text>
+        <text y="60">         cat.category_name,</text>
+        <text y="80">         <tspan fill="#f59e0b">SUM</tspan>(p.price * s.quantity * (<tspan fill="#fb7185">1</tspan> - s.discount/<tspan fill="#fb7185">100</tspan>)) <tspan fill="#c084fc">AS</tspan> <tspan fill="#34d399">net_sales</tspan>,</text>
+        <text y="100">         <tspan fill="#f59e0b">DENSE_RANK</tspan>() <tspan fill="#c084fc">OVER</tspan> (<tspan fill="#c084fc">PARTITION BY</tspan> c.city <tspan fill="#c084fc">ORDER BY</tspan> <tspan fill="#f59e0b">SUM</tspan>(p.price * s.quantity) <tspan fill="#c084fc">DESC</tspan>) <tspan fill="#c084fc">AS</tspan> <tspan fill="#34d399">city_rank</tspan></text>
+        <text y="120">  <tspan fill="#c084fc">FROM</tspan> sales s</text>
+        <text y="140">  <tspan fill="#c084fc">JOIN</tspan> customers c <tspan fill="#c084fc">ON</tspan> s.customer_id = c.customer_id</text>
+        <text y="160">  <tspan fill="#c084fc">JOIN</tspan> products p <tspan fill="#c084fc">ON</tspan> s.product_id = p.product_id</text>
+        <text y="180">  <tspan fill="#c084fc">JOIN</tspan> categories cat <tspan fill="#c084fc">ON</tspan> p.category_id = cat.category_id</text>
+        <text y="200">  <tspan fill="#c084fc">GROUP BY</tspan> c.customer_id, c.full_name, c.city, cat.category_name</text>
+        <text y="220">  <tspan fill="#c084fc">HAVING</tspan> <tspan fill="#f59e0b">SUM</tspan>(p.price * s.quantity) &gt; <tspan fill="#fb7185">5000</tspan></text>
+        <text y="240">)</text>
+        <text y="260"><tspan fill="#c084fc">SELECT</tspan> * <tspan fill="#c084fc">FROM</tspan> CustomerRevenueSummary <tspan fill="#c084fc">WHERE</tspan> city_rank &lt;= <tspan fill="#fb7185">3</tspan>;</text>
+      </g>
+    </g>
+
+    <!-- Query Output Console Results (Bottom Half) -->
+    <g transform="translate(16, 400)">
+      <rect width="668" height="26" fill="#1e293b" rx="4" />
+      <text x="12" y="17" fill="#38bdf8" font-size="11" font-weight="700" class="font-sans">
+        RESULT GRID: 5 ROWS RETURNED &bull; DURATION: 0.0082 SEC &bull; FETCH: 0.0011 SEC
+      </text>
+
+      <!-- Table Header -->
+      <g transform="translate(0, 36)">
+        <rect width="668" height="24" fill="#131d33" />
+        <text x="12" y="16" fill="#94a3b8" font-size="10.5" font-weight="700" class="font-mono">customer_id</text>
+        <text x="120" y="16" fill="#94a3b8" font-size="10.5" font-weight="700" class="font-mono">full_name</text>
+        <text x="260" y="16" fill="#94a3b8" font-size="10.5" font-weight="700" class="font-mono">city</text>
+        <text x="370" y="16" fill="#94a3b8" font-size="10.5" font-weight="700" class="font-mono">category_name</text>
+        <text x="510" y="16" fill="#94a3b8" font-size="10.5" font-weight="700" class="font-mono">net_sales</text>
+        <text x="610" y="16" fill="#94a3b8" font-size="10.5" font-weight="700" class="font-mono">rank</text>
+      </g>
+
+      <!-- Table Rows -->
+      <g transform="translate(0, 62)" font-size="10.5" class="font-mono">
+        <!-- Row 1 -->
+        <rect width="668" height="22" fill="#0f172a" />
+        <text x="12" y="15" fill="#f8fafc">101</text>
+        <text x="120" y="15" fill="#38bdf8">Ahmed Mansour</text>
+        <text x="260" y="15" fill="#f8fafc">Cairo</text>
+        <text x="370" y="15" fill="#e2e8f0">Electronics</text>
+        <text x="510" y="15" fill="#34d399">$14,250.00</text>
+        <text x="615" y="15" fill="#f59e0b" font-weight="700">1</text>
+
+        <!-- Row 2 -->
+        <g transform="translate(0, 24)">
+          <rect width="668" height="22" fill="#131c31" />
+          <text x="12" y="15" fill="#f8fafc">104</text>
+          <text x="120" y="15" fill="#38bdf8">Sarah Khalil</text>
+          <text x="260" y="15" fill="#f8fafc">Alexandria</text>
+          <text x="370" y="15" fill="#e2e8f0">Electronics</text>
+          <text x="510" y="15" fill="#34d399">$9,500.00</text>
+          <text x="615" y="15" fill="#f59e0b" font-weight="700">1</text>
+        </g>
+
+        <!-- Row 3 -->
+        <g transform="translate(0, 48)">
+          <rect width="668" height="22" fill="#0f172a" />
+          <text x="12" y="15" fill="#f8fafc">107</text>
+          <text x="120" y="15" fill="#38bdf8">Omar Sherif</text>
+          <text x="260" y="15" fill="#f8fafc">Cairo</text>
+          <text x="370" y="15" fill="#e2e8f0">Sports &amp; Fitness</text>
+          <text x="510" y="15" fill="#34d399">$7,200.00</text>
+          <text x="615" y="15" fill="#f59e0b" font-weight="700">2</text>
+        </g>
+
+        <!-- Row 4 -->
+        <g transform="translate(0, 72)">
+          <rect width="668" height="22" fill="#131c31" />
+          <text x="12" y="15" fill="#f8fafc">112</text>
+          <text x="120" y="15" fill="#38bdf8">Mariam Nabil</text>
+          <text x="260" y="15" fill="#f8fafc">Giza</text>
+          <text x="370" y="15" fill="#e2e8f0">Home &amp; Kitchen</text>
+          <text x="510" y="15" fill="#34d399">$6,600.00</text>
+          <text x="615" y="15" fill="#f59e0b" font-weight="700">1</text>
+        </g>
+
+        <!-- Row 5 -->
+        <g transform="translate(0, 96)">
+          <rect width="668" height="22" fill="#0f172a" />
+          <text x="12" y="15" fill="#f8fafc">115</text>
+          <text x="120" y="15" fill="#38bdf8">Youssef Tarek</text>
+          <text x="260" y="15" fill="#f8fafc">Cairo</text>
+          <text x="370" y="15" fill="#e2e8f0">Clothing</text>
+          <text x="510" y="15" fill="#34d399">$5,400.00</text>
+          <text x="615" y="15" fill="#f59e0b" font-weight="700">3</text>
+        </g>
+      </g>
+
+      <!-- KPI Executive Metrics Strip -->
+      <g transform="translate(0, 200)">
+        <rect width="668" height="85" rx="6" fill="#111c33" stroke="#3b82f6" stroke-width="1" />
+        
+        <g transform="translate(30, 20)">
+          <text x="0" y="0" fill="#94a3b8" font-size="10" font-weight="700" class="font-sans">TOTAL RECORDS</text>
+          <text x="0" y="24" fill="#38bdf8" font-size="20" font-weight="800" class="font-sans">120 Sales</text>
+          <text x="0" y="42" fill="#64748b" font-size="9.5" class="font-sans">Full 2024 Audit</text>
+        </g>
+
+        <line x1="170" y1="15" x2="170" y2="70" stroke="#334155" stroke-width="1" />
+
+        <g transform="translate(200, 20)">
+          <text x="0" y="0" fill="#94a3b8" font-size="10" font-weight="700" class="font-sans">RELATIONAL TABLES</text>
+          <text x="0" y="24" fill="#34d399" font-size="20" font-weight="800" class="font-sans">5 Tables</text>
+          <text x="0" y="42" fill="#64748b" font-size="9.5" class="font-sans">Star Schema / 3NF</text>
+        </g>
+
+        <line x1="340" y1="15" x2="340" y2="70" stroke="#334155" stroke-width="1" />
+
+        <g transform="translate(370, 20)">
+          <text x="0" y="0" fill="#94a3b8" font-size="10" font-weight="700" class="font-sans">COMPLEX QUERIES</text>
+          <text x="0" y="24" fill="#f59e0b" font-size="20" font-weight="800" class="font-sans">18+ Scenarios</text>
+          <text x="0" y="42" fill="#64748b" font-size="9.5" class="font-sans">CTEs, Windows &amp; Joins</text>
+        </g>
+
+        <line x1="510" y1="15" x2="510" y2="70" stroke="#334155" stroke-width="1" />
+
+        <g transform="translate(540, 20)">
+          <text x="0" y="0" fill="#94a3b8" font-size="10" font-weight="700" class="font-sans">EXECUTION EFFICIENCY</text>
+          <text x="0" y="24" fill="#a78bfa" font-size="20" font-weight="800" class="font-sans">0.008s</text>
+          <text x="0" y="42" fill="#64748b" font-size="9.5" class="font-sans">Indexed Index-Scan</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
