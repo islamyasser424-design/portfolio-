@@ -84,6 +84,7 @@ portfolio/
 | Project | Domain / Type | Tools | Repository Link |
 | :--- | :--- | :--- | :--- |
 | **Logistics Vision & Fleet Analytics** | Supply Chain & Telematics | Power BI, DAX, Star Schema | [Repo](https://github.com/islamyasser424-design/Logistics-Vision-Fleet-Supply-Chain-Analytics-Dashboard) |
+| **Enterprise Sales Analytics & Dimensional Modeling** | Sales Performance & Dimensional Modeling | SQL / MySQL, Fact/Dim Schema, Window Functions | [Repo](https://github.com/islamyasser424-design/SQL-Quiz-4) |
 | **Olist E-Commerce Analytics** | Financial Reconciliation & Fulfillment | Excel, Power Pivot, Data Modeling | [Repo](https://github.com/islamyasser424-design/Olist-E-Commerce-Dashboard) |
 | **Uber Operational Mobility** | Ride Operations & Dynamic Demand | Power BI, DAX, Time Intelligence | [Repo](https://github.com/islamyasser424-design/Uber-Dashboard) |
 | **Amazon Supply Chain Dashboard** | Sales Performance & Regional Logistics | Power BI, DAX, Category Modeling | [Repo](https://github.com/islamyasser424-design/Amazon-Dashboard) |
@@ -94,7 +95,6 @@ portfolio/
 | **HR360 Workforce Intelligence** | People Analytics & Attrition | Power BI (PBIP), DAX, TMDL | [Repo](https://github.com/islamyasser424-design/HR360) |
 | **Salla Contact Center Operations** | Call Center & Workforce Analytics | Power BI, Dynamic HTML with DAX, CSS Grid, 3D Flip Cards, Deneb | [Repo](https://github.com/islamyasser424-design/SALla-call-center-Dashboard) |
 | **Walmart Retail Sales Intelligence** | Retail Sales & Macroeconomic Forecasting | Google Sheets, Apps Script, Web BI, Chart.js | [Repo](https://github.com/islamyasser424-design/Walmart-Sales-) / [Live Demo](https://islamyasser424-design.github.io/Walmart-Sales-/) |
-| **MarketPulse Marketing Analytics** | Marketing Intelligence & ROI Attribution | Power BI DAX, React, TypeScript, Recharts | [Repo](https://github.com/islamyasser424-design/marketing-analytics-live-dashboard) / [Live Demo](https://islamyasser424-design.github.io/marketing-analytics-live-dashboard/) |
 
 ---
 

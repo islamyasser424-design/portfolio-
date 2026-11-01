@@ -1,0 +1,15 @@
+# IDE & System
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Agent tooling & local temp
+.agent/
+.agents/
+.taste-skill/
+saas-preview.html
+skills-lock.json
+
+# Internal subdirectories not meant for portfolio
+meti-task-tracker/
