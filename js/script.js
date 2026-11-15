@@ -529,8 +529,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let matchCount = 0;
 
     projectCards.forEach(card => {
-      const cardCat = card.getAttribute('data-category');
-      const matchesCategory = (currentCategory === 'all' || cardCat === currentCategory);
+      const cardCat = (card.getAttribute('data-category') || '').trim();
+      const cardCats = cardCat.split(/\s+/);
+      const matchesCategory = (currentCategory === 'all' || cardCats.includes(currentCategory));
 
       // Search matching across card title, tool tags, and textual content
       let matchesSearch = true;
