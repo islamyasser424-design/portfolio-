@@ -83,7 +83,7 @@ portfolio/
 
 | Project | Domain / Type | Tools | Repository Link |
 | :--- | :--- | :--- | :--- |
-| **Logistics Vision & Fleet Analytics** | Supply Chain & Telematics | Power BI, DAX, Star Schema | [Repo](https://github.com/islamyasser424-design/Logistics-Vision-Fleet-Supply-Chain-Analytics-Dashboard) |
+| **Logistics Vision & Fleet Analytics** | Supply Chain & Telematics | Power BI, Python ETL, SQL Server, 62 DAX Measures | [Repo](https://github.com/islamyasser424-design/Logistics-Vision) • [Live Demo](https://app.powerbi.com/view?r=eyJrIjoiZTJlOWM5NzYtMDEyOC00NWY0LTlkZGUtZWI5NDZlMjUwYjdiIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9) |
 | **Enterprise Sales Analytics & Dimensional Modeling** | Sales Performance & Dimensional Modeling | SQL / MySQL, Fact/Dim Schema, Window Functions | [Repo](https://github.com/islamyasser424-design/SQL-Quiz-4) |
 | **Olist E-Commerce Analytics** | Financial Reconciliation & Fulfillment | Excel, Power Pivot, Data Modeling | [Repo](https://github.com/islamyasser424-design/Olist-E-Commerce-Dashboard) |
 | **Uber Operational Mobility** | Ride Operations & Dynamic Demand | Power BI, DAX, Time Intelligence | [Repo](https://github.com/islamyasser424-design/Uber-Dashboard) |
