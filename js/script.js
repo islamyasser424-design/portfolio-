@@ -679,349 +679,263 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     8c. Interactive Dynamic Dashboard Mockup Controller (Hero Section)
+     8c. Interactive Enterprise Architecture & Project Deck Controller (Hero Section)
      ========================================================================== */
   const dashboardMockup = document.getElementById('dashboardMockup');
   const mockupFileName = document.getElementById('mockupFileName');
-  const mockupDaxCode = document.getElementById('mockupDaxCode');
-  const copyDaxBtn = document.getElementById('copyDaxBtn');
-  const copyDaxTooltip = document.getElementById('copyDaxTooltip');
   const mockupRefreshBtn = document.getElementById('mockupRefreshBtn');
   const mockupStatusText = document.getElementById('mockupStatusText');
-  const mockupChartTitle = document.getElementById('mockupChartTitle');
-  const legendText1 = document.getElementById('legendText1');
-  const legendText2 = document.getElementById('legendText2');
-  const svgChartContainer = document.getElementById('svgChartContainer');
-  const chartTooltipBadge = document.getElementById('chartTooltipBadge');
-  const mockupPolyline1 = document.getElementById('mockupPolyline1');
-  const mockupPolyline2 = document.getElementById('mockupPolyline2');
-  const mockupAreaPolygon = document.getElementById('mockupAreaPolygon');
-  const mockupPointsGroup = document.getElementById('mockupPointsGroup');
-  const chartCrosshair = document.getElementById('chartCrosshair');
-  const activeScanPoint = document.getElementById('activeScanPoint');
-  const modelTabBtns = document.querySelectorAll('.model-tab-btn');
-  const metricCards = document.querySelectorAll('#mockupMetricsGrid .metric-card');
-  const modelRefreshInfo = document.getElementById('modelRefreshInfo');
+  const spotlightTitle = document.getElementById('spotlightTitle');
+  const spotlightDesc = document.getElementById('spotlightDesc');
+  const spotlightChips = document.getElementById('spotlightChips');
+  const deepdiveBanner = document.getElementById('deckDeepdiveBanner');
+  const deepdiveIcon = document.getElementById('deepdiveIcon');
+  const deepdiveCode = document.getElementById('deepdiveCode');
+  const deepdiveLatency = document.getElementById('deepdiveLatency');
+  const deckLiveBtn = document.getElementById('deckLiveBtn');
+  const deckGithubBtn = document.getElementById('deckGithubBtn');
+  const deckBadgesGroup = document.getElementById('deckBadgesGroup');
+  const deckProjBtns = document.querySelectorAll('.deck-proj-btn');
+  const pipelineNodes = document.querySelectorAll('.pipeline-node');
 
-  if (dashboardMockup && mockupFileName && mockupDaxCode) {
-    const MOCKUP_MODELS = {
-      ecommerce: {
-        fileName: 'Operational_Analytics_V2.pbix',
-        dax: 'Late_Delivery_Leakage = CALCULATE(SUM(Orders[FreightValue]), Orders[DeliveryDelayDays] > 0, Orders[OrderStatus] = "Delivered")',
-        statusText: 'Active Star Schema',
-        refreshInfo: 'Auto-refreshed via Power Query',
-        metrics: [
-          { label: 'Orders Audited', val: 99441, format: 'comma', prefix: '', suffix: '', pill: '+100% Star Schema', pillClass: 'pill-up', sub: 'Olist E-Commerce Project', color: 'text-cyan' },
-          { label: 'Financial Analyzed', val: 2.29, decimals: 2, prefix: '$', suffix: 'M', pill: '9,994 Rows', pillClass: 'pill-neutral', sub: 'SuperStore BI Dashboard', color: 'text-blue' },
-          { label: 'Operational Quality', val: 99.4, decimals: 1, prefix: '', suffix: '%', pill: 'QA Benchmark', pillClass: 'pill-emerald', sub: 'Multimodal Annotation QA', color: 'text-emerald' },
-          { label: 'Interactive Reports', val: 9, prefix: '', suffix: ' Pages', pill: 'What-If Scenarios', pillClass: 'pill-blue', sub: 'Logistics Vision Fleet Model', color: 'text-amber' }
+  if (dashboardMockup && spotlightTitle && deepdiveCode) {
+    const DECK_PROJECTS = {
+      logistics: {
+        fileName: 'Enterprise Analytics Deck & Architecture',
+        statusText: 'Production Sync',
+        title: 'Logistics & Fleet Operations Intelligence',
+        desc: 'Commercial shipment telemetry audit resolving 10,482 delivery discrepancies with automated ETL.',
+        chips: [
+          { text: '$298.6M Freight', cls: 'cyan' },
+          { text: '85,410 Shipments', cls: 'green' },
+          { text: '62 DAX Measures', cls: 'amber' }
         ],
-        chart: {
-          title: 'Revenue & SLA Delivery Variance (Monthly Trend)',
-          legend1: 'Delivered On-Time',
-          legend2: 'Delayed SLA',
-          line1: '0,85 50,75 100,80 150,55 200,60 250,35 300,45 350,25 400,30 450,15 500,20',
-          line2: '0,110 50,105 100,102 150,95 200,90 250,82 300,80 350,70 400,65 450,58 500,52',
-          polygon: '0,120 0,85 50,75 100,80 150,55 200,60 250,35 300,45 350,25 400,30 450,15 500,20 500,120',
-          points: [
-            { cx: 150, cy: 55, month: 'March', val1: '$145K (92.4%)', val2: '$11.8K (7.6%)' },
-            { cx: 250, cy: 35, month: 'May', val1: '$184K (94.2%)', val2: '$11.3K (5.8%)' },
-            { cx: 350, cy: 25, month: 'July', val1: '$210K (95.5%)', val2: '$9.9K (4.5%)' },
-            { cx: 450, cy: 15, month: 'September', val1: '$242K (96.5%)', val2: '$8.8K (3.5%)' },
-            { cx: 500, cy: 20, month: 'October', val1: '$268K (97.1%)', val2: '$7.9K (2.9%)' }
-          ]
-        }
+        stages: [
+          { name: 'Ingestion', sub: '14 Raw Feeds', numCls: 'num-slate', icon: '📦', detail: '14 Raw Feeds: Ingesting carrier telematics & commercial delivery manifests into automated staging.' },
+          { name: 'Python ETL', sub: 'Pandas Clean', numCls: 'num-blue', icon: '🐍', detail: 'Logistics_Vision_ETL.py: Sanitized negative delays & resolved 10,482 boolean status errors.' },
+          { name: 'SQL Server', sub: '16 FKs Schema', numCls: 'num-amber', icon: '🗄️', detail: 'SQL Relational DW: 16 Foreign Keys linking fleet, drivers, shipments & delivery facts.' },
+          { name: 'Power BI', sub: '62 DAX Measures', numCls: 'num-cyan', icon: '⚡', detail: 'Power BI Semantic Model: 62 DAX measures computing real-time OTIF, SLA & fuel stress tests.' }
+        ],
+        deepdive: 'Logistics_Vision_ETL.py ➔ SQL Views ➔ In-Memory Tabular Model',
+        deepdiveLatency: '12.4 ms Refresh',
+        liveUrl: 'https://app.powerbi.com/view?r=eyJrIjoiOGZlZDc1ODEtMzIzYS00M2VhLWFlNzctMWVjMDkyMDhhZTk4IiwidCI6IjI2NTNmOTI5LWU5NmMtNGY4Mi1iYzk2LTc4ZDM3Nzk3ODc2ZSJ9',
+        githubUrl: 'https://github.com/islamyasser424-design/Logistics-Vision',
+        badges: ['Power BI (62)', 'Python (ETL)', 'SQL Server', 'Statistical Modeling']
       },
-      callcenter: {
+      salla: {
         fileName: 'Salla_ContactCenter_Operations.pbix',
-        dax: 'Service_Level_% = DIVIDE(CALCULATE(SUM(Calls[Handled]), Calls[AnswerTime] <= 20), SUM(Calls[Offered]), 0)',
-        statusText: '16 Call Agents Audited',
-        refreshInfo: 'Live Deneb & HTML Visual Sync',
-        metrics: [
-          { label: 'Offered Calls', val: 1744885, format: 'comma', prefix: '', suffix: '', pill: '3 Months Ingested', pillClass: 'pill-up', sub: 'Salla Customer Operations', color: 'text-cyan' },
-          { label: 'Handled Calls', val: 1721842, format: 'comma', prefix: '', suffix: '', pill: '98.7% Answer Rate', pillClass: 'pill-neutral', sub: '23,043 Abandoned Calls', color: 'text-blue' },
-          { label: 'Service Level', val: 91.1, decimals: 1, prefix: '', suffix: '%', pill: '>80% Benchmark', pillClass: 'pill-emerald', sub: 'Within 20s Threshold', color: 'text-emerald' },
-          { label: 'Avg Speed of Answer', val: 14.3, decimals: 1, prefix: '', suffix: 's', pill: 'ASA Weighted', pillClass: 'pill-blue', sub: 'Project C Best: 95.2% SL', color: 'text-amber' }
+        statusText: '16 Agents Audited',
+        title: 'Salla Contact Center Customer Operations',
+        desc: 'Operational workforce audit across 16 customer service agents, tracking 1,744,885 inbound interactions.',
+        chips: [
+          { text: '1,744,885 Calls', cls: 'cyan' },
+          { text: '91.1% SLA', cls: 'green' },
+          { text: '14.3s Avg ASA', cls: 'amber' }
         ],
-        chart: {
-          title: 'Inbound Call Volume vs Service Level (Daily SLA Run)',
-          legend1: 'Handled Inbound Calls',
-          legend2: 'Abandonment Gap',
-          line1: '0,95 50,88 100,70 150,60 200,40 250,45 300,30 350,38 400,20 450,25 500,15',
-          line2: '0,118 50,115 100,112 150,108 200,105 250,100 300,98 350,92 400,88 450,85 500,80',
-          polygon: '0,120 0,95 50,88 100,70 150,60 200,40 250,45 300,30 350,38 400,20 450,25 500,15 500,120',
-          points: [
-            { cx: 100, cy: 70, month: 'Week 2', val1: '21,400 Handled (98.2%)', val2: '1.8% Abandon' },
-            { cx: 200, cy: 40, month: 'Week 4', val1: '26,850 Handled (98.9%)', val2: '1.1% Abandon' },
-            { cx: 300, cy: 30, month: 'Week 6', val1: '28,120 Handled (99.1%)', val2: '0.9% Abandon' },
-            { cx: 400, cy: 20, month: 'Week 8', val1: '30,410 Handled (99.3%)', val2: '0.7% Abandon' },
-            { cx: 500, cy: 15, month: 'Week 12', val1: '32,200 Handled (99.5%)', val2: '0.5% Abandon' }
-          ]
-        }
+        stages: [
+          { name: 'Ingestion', sub: '3 Months Raw', numCls: 'num-slate', icon: '📞', detail: '3 Months Raw Telephony: Ingesting queue routing, agent talk-time & wrap-up timestamps.' },
+          { name: 'Data Clean', sub: 'Outlier Filter', numCls: 'num-blue', icon: '🧹', detail: 'Outlier & Anomaly Removal: Filtering short abandoned calls (<5s) & agent adherence audit.' },
+          { name: 'SQL Schema', sub: 'Agent Star DW', numCls: 'num-amber', icon: '🗄️', detail: 'Relational Star Schema: Linking daily call volume to 16 agent profiles and queues.' },
+          { name: 'Power BI', sub: 'Deneb & HTML', numCls: 'num-cyan', icon: '⚡', detail: 'Custom Deneb Visuals: Visualizing Service Level % within 20s threshold benchmark.' }
+        ],
+        deepdive: 'Salla_ContactCenter_Operations.pbix ➔ Deneb Visual Sync ➔ 16 Agents Audited',
+        deepdiveLatency: '98.7% Answer Rate',
+        liveUrl: 'https://app.powerbi.com/view?r=eyJrIjoiMDhhM2NhMjEtZjAwOS00MjY5LTkyOTQtMzQ5NzYxYWYwZGU1IiwidCI6IjI2NTNmOTI5LWU5NmMtNGY4Mi1iYzk2LTc4ZDM3Nzk3ODc2ZSJ9',
+        githubUrl: 'https://github.com/islamyasser424-design/Salla-ContactCenter-Operations',
+        badges: ['Power BI', 'Deneb & HTML', 'Call Center Analytics', 'SLA Optimization']
       },
-      financial: {
-        fileName: 'SuperStore_Executive_BI.pbix',
-        dax: 'Net_Profit_Margin = DIVIDE(SUM(Financials[Profit]), SUM(Financials[Sales]), 0)',
-        statusText: 'Executive P&L Engine',
-        refreshInfo: 'Cleaned via Power Query ELT',
-        metrics: [
-          { label: 'Total Revenue', val: 2297201, format: 'comma', prefix: '$', suffix: '', pill: '4 Global Regions', pillClass: 'pill-up', sub: 'US SuperStore Analytics', color: 'text-cyan' },
-          { label: 'Net Profit', val: 286397, format: 'comma', prefix: '$', suffix: '', pill: '12.47% Profit Margin', pillClass: 'pill-neutral', sub: 'Technology High-Yield', color: 'text-blue' },
-          { label: 'Discount Audited', val: 1429, format: 'comma', prefix: '', suffix: ' Orders', pill: 'High Discount Risk', pillClass: 'pill-emerald', sub: 'Profit Erosion Avoidance', color: 'text-emerald' },
-          { label: 'SLA Delivery', val: 95.8, decimals: 1, prefix: '', suffix: '%', pill: 'Same-Day & Standard', pillClass: 'pill-blue', sub: 'Shipping Time Optimized', color: 'text-amber' }
+      olist: {
+        fileName: 'Operational_Analytics_V2.pbix',
+        statusText: 'Star Schema DW',
+        title: 'Olist Brazilian E-Commerce Ecosystem',
+        desc: 'Commercial dataset auditing 100,000 real orders across Brazilian states, payments & logistics.',
+        chips: [
+          { text: '99,441 Orders', cls: 'cyan' },
+          { text: '$16M GMV Audited', cls: 'green' },
+          { text: 'RFM Segmentation', cls: 'amber' }
         ],
-        chart: {
-          title: 'Quarterly Sales Revenue vs Profit Target Baseline',
-          legend1: 'Quarterly Net Sales',
-          legend2: 'Target Profit Baseline',
-          line1: '0,105 50,92 100,85 150,78 200,62 250,50 300,55 350,35 400,40 450,22 500,18',
-          line2: '0,115 50,110 100,106 150,100 200,94 250,88 300,82 350,75 400,70 450,64 500,60',
-          polygon: '0,120 0,105 50,92 100,85 150,78 200,62 250,50 300,55 350,35 400,40 450,22 500,18 500,120',
-          points: [
-            { cx: 100, cy: 85, month: 'Q1', val1: '$420K Sales ($51K Profit)', val2: 'Target: $45K' },
-            { cx: 200, cy: 62, month: 'Q2', val1: '$580K Sales ($72K Profit)', val2: 'Target: $65K' },
-            { cx: 300, cy: 55, month: 'Q3', val1: '$640K Sales ($81K Profit)', val2: 'Target: $75K' },
-            { cx: 400, cy: 40, month: 'Q4', val1: '$790K Sales ($104K Profit)', val2: 'Target: $90K' },
-            { cx: 500, cy: 18, month: 'Annual Close', val1: '$860K Sales ($115K Profit)', val2: 'Target: $98K' }
-          ]
-        }
+        stages: [
+          { name: 'Ingestion', sub: '9 Data Tables', numCls: 'num-slate', icon: '🛒', detail: '9 Relational Tables: Orders, customer demographics, payments, sellers, & geolocations.' },
+          { name: 'Python & DAX', sub: 'RFM Matrix', numCls: 'num-blue', icon: '🐍', detail: 'RFM Scoring Model: Classifying customer segments by Recency, Frequency & Monetary value.' },
+          { name: 'SQL Server', sub: 'Star Schema', numCls: 'num-amber', icon: '🗄️', detail: 'Enterprise Data Warehouse: Star schema with optimized surrogate keys for order items.' },
+          { name: 'Power BI', sub: 'Geo Analytics', numCls: 'num-cyan', icon: '⚡', detail: 'Executive BI Dashboard: Freight leakage analysis and delivery timeline forecasting.' }
+        ],
+        deepdive: 'Operational_Analytics_V2.pbix ➔ Star Schema DW ➔ 100k Orders',
+        deepdiveLatency: 'Instant DAX Eval',
+        liveUrl: 'https://app.powerbi.com/view?r=eyJrIjoiZDZhZjExYzEtYjQxMS00MGE5LWIwYTItOWYyZjM3YmE1MzU1IiwidCI6IjI2NTNmOTI5LWU5NmMtNGY4Mi1iYzk2LTc4ZDM3Nzk3ODc2ZSJ9',
+        githubUrl: 'https://github.com/islamyasser424-design/Olist-Store-Analysis',
+        badges: ['Power BI', 'Star Schema', 'SQL Server', 'RFM Customer Segments']
       }
     };
 
-    let currentModelKey = 'ecommerce';
+    let currentProjKey = 'logistics';
+    let currentActiveStage = 4;
 
-    // Renders data points on the SVG sparkline
-    const renderPoints = (points) => {
-      if (!mockupPointsGroup) return;
-      mockupPointsGroup.innerHTML = '';
-      points.forEach((pt, idx) => {
-        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-        circle.setAttribute('cx', pt.cx);
-        circle.setAttribute('cy', pt.cy);
-        circle.setAttribute('r', idx === points.length - 1 ? '5' : '4.5');
-        circle.setAttribute('fill', idx === points.length - 1 ? '#10b981' : '#06b6d4');
-        circle.setAttribute('stroke', '#090d16');
-        circle.setAttribute('stroke-width', '2');
-        circle.style.animationDelay = `${(idx + 1) * 0.35}s`;
-        mockupPointsGroup.appendChild(circle);
-      });
-    };
-
-    // Re-draws chart with animation
-    const redrawChart = () => {
-      if (mockupPolyline1) {
-        mockupPolyline1.style.animation = 'none';
-        void mockupPolyline1.offsetWidth;
-        mockupPolyline1.style.animation = 'drawSparkline 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards';
-      }
-      if (mockupPolyline2) {
-        mockupPolyline2.style.animation = 'none';
-        void mockupPolyline2.offsetWidth;
-        mockupPolyline2.style.animation = 'drawSparkline 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards';
-      }
-      if (mockupAreaPolygon) {
-        mockupAreaPolygon.style.animation = 'none';
-        void mockupAreaPolygon.offsetWidth;
-        mockupAreaPolygon.style.animation = 'fadeInArea 1.2s ease 0.6s forwards';
-      }
-    };
-
-    // Loads a model into the dashboard mockup
-    const loadModel = (modelKey) => {
-      const data = MOCKUP_MODELS[modelKey];
+    const loadProject = (projKey, preserveStage = false) => {
+      const data = DECK_PROJECTS[projKey];
       if (!data) return;
-      currentModelKey = modelKey;
+      currentProjKey = projKey;
 
-      // Update filename tab
-      if (mockupFileName) mockupFileName.textContent = data.fileName;
-
-      // Update status
-      if (mockupStatusText) mockupStatusText.textContent = data.statusText;
-      if (modelRefreshInfo) modelRefreshInfo.textContent = data.refreshInfo;
-
-      // Update DAX Bar with fade effect
-      if (mockupDaxCode) {
-        mockupDaxCode.classList.add('dax-fade');
-        setTimeout(() => {
-          mockupDaxCode.textContent = data.dax;
-          mockupDaxCode.title = data.dax;
-          mockupDaxCode.classList.remove('dax-fade');
-        }, 150);
+      if (!preserveStage) {
+        currentActiveStage = 4;
       }
 
-      // Update 4 KPI Cards
-      data.metrics.forEach((m, idx) => {
-        const labelEl = document.getElementById(`kpiLabel${idx}`);
-        const valEl = document.getElementById(`kpiVal${idx}`);
-        const pillEl = document.getElementById(`kpiPill${idx}`);
-        const subEl = document.getElementById(`kpiSub${idx}`);
+      // Update header
+      if (mockupFileName) mockupFileName.textContent = data.fileName;
+      if (mockupStatusText) mockupStatusText.textContent = data.statusText;
 
-        if (labelEl) labelEl.textContent = m.label;
-        if (subEl) subEl.textContent = m.sub;
-        if (pillEl) {
-          pillEl.textContent = m.pill;
-          pillEl.className = `metric-pill ${m.pillClass}`;
-        }
-        if (valEl) {
-          valEl.className = `metric-number ${m.color}`;
-          valEl.setAttribute('data-counter', m.val);
-          valEl.setAttribute('data-prefix', m.prefix || '');
-          valEl.setAttribute('data-suffix', m.suffix || '');
-          valEl.setAttribute('data-decimals', m.decimals || 0);
-          valEl.setAttribute('data-format', m.format || '');
-          valEl.setAttribute('data-duration', '1400');
-          animateCounter(valEl);
+      // Update spotlight title & desc with quick fade
+      if (spotlightTitle) {
+        spotlightTitle.style.opacity = '0';
+        setTimeout(() => {
+          spotlightTitle.textContent = data.title;
+          spotlightTitle.style.opacity = '1';
+        }, 120);
+      }
+      if (spotlightDesc) {
+        spotlightDesc.style.opacity = '0';
+        setTimeout(() => {
+          spotlightDesc.textContent = data.desc;
+          spotlightDesc.style.opacity = '1';
+        }, 120);
+      }
+
+      // Update chips
+      if (spotlightChips) {
+        spotlightChips.innerHTML = '';
+        data.chips.forEach(chip => {
+          const span = document.createElement('span');
+          span.className = `metric-chip ${chip.cls}`;
+          span.textContent = chip.text;
+          spotlightChips.appendChild(span);
+        });
+      }
+
+      // Update pipeline nodes
+      data.stages.forEach((st, idx) => {
+        const stageNum = idx + 1;
+        const nameEl = document.getElementById(`stageName${stageNum}`);
+        const metaEl = document.getElementById(`stageMeta${stageNum}`);
+        const nodeBtn = document.getElementById(`stageNode${stageNum}`);
+
+        if (nameEl) nameEl.textContent = st.name;
+        if (metaEl) metaEl.textContent = st.sub;
+
+        if (nodeBtn) {
+          if (stageNum === currentActiveStage) {
+            nodeBtn.classList.add('highlighted');
+          } else {
+            nodeBtn.classList.remove('highlighted');
+          }
         }
       });
 
-      // Update Chart Title and Legend
-      if (mockupChartTitle) mockupChartTitle.textContent = data.chart.title;
-      if (legendText1) legendText1.textContent = data.chart.legend1;
-      if (legendText2) legendText2.textContent = data.chart.legend2;
+      // Update Deep Dive Banner
+      const currentStageData = data.stages[currentActiveStage - 1] || data.stages[3];
+      if (deepdiveIcon) deepdiveIcon.textContent = currentStageData.icon || '⚡';
+      if (deepdiveCode) {
+        deepdiveCode.style.opacity = '0';
+        setTimeout(() => {
+          deepdiveCode.textContent = currentStageData.detail || data.deepdive;
+          deepdiveCode.style.opacity = '1';
+        }, 120);
+      }
+      if (deepdiveLatency) deepdiveLatency.textContent = data.deepdiveLatency;
 
-      // Update SVG coordinates
-      if (mockupPolyline1) mockupPolyline1.setAttribute('points', data.chart.line1);
-      if (mockupPolyline2) mockupPolyline2.setAttribute('points', data.chart.line2);
-      if (mockupAreaPolygon) mockupAreaPolygon.setAttribute('points', data.chart.polygon);
+      // Update action buttons
+      if (deckLiveBtn) deckLiveBtn.href = data.liveUrl;
+      if (deckGithubBtn) deckGithubBtn.href = data.githubUrl;
 
-      renderPoints(data.chart.points);
-      redrawChart();
+      // Update tech badges
+      if (deckBadgesGroup) {
+        deckBadgesGroup.innerHTML = '';
+        data.badges.forEach(b => {
+          const pill = document.createElement('span');
+          pill.className = 'deck-pill';
+          pill.textContent = b;
+          deckBadgesGroup.appendChild(pill);
+        });
+      }
     };
 
     // Tab buttons event listeners
-    modelTabBtns.forEach(btn => {
+    deckProjBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        modelTabBtns.forEach(b => {
+        deckProjBtns.forEach(b => {
           b.classList.remove('active');
           b.setAttribute('aria-selected', 'false');
         });
         btn.classList.add('active');
         btn.setAttribute('aria-selected', 'true');
-        const modelKey = btn.getAttribute('data-model');
-        loadModel(modelKey);
+        const projKey = btn.getAttribute('data-proj');
+        loadProject(projKey);
       });
     });
 
-    // Copy DAX Button
-    if (copyDaxBtn && copyDaxTooltip) {
-      copyDaxBtn.addEventListener('click', async () => {
-        const textToCopy = mockupDaxCode ? mockupDaxCode.textContent : '';
-        try {
-          await navigator.clipboard.writeText(textToCopy);
-          copyDaxTooltip.textContent = '✓ Copied!';
-          copyDaxBtn.classList.add('copied');
-          setTimeout(() => {
-            copyDaxTooltip.textContent = 'Copy';
-            copyDaxBtn.classList.remove('copied');
-          }, 1800);
-        } catch (err) {
-          copyDaxTooltip.textContent = 'Copied!';
+    // Pipeline Node Click Listeners
+    pipelineNodes.forEach(node => {
+      node.addEventListener('click', () => {
+        pipelineNodes.forEach(n => n.classList.remove('highlighted'));
+        node.classList.add('highlighted');
+        const stageNum = parseInt(node.getAttribute('data-stage'), 10);
+        currentActiveStage = stageNum;
+
+        const curData = DECK_PROJECTS[currentProjKey];
+        if (curData && curData.stages[stageNum - 1]) {
+          const stageInfo = curData.stages[stageNum - 1];
+          if (deepdiveIcon) deepdiveIcon.textContent = stageInfo.icon;
+          if (deepdiveCode) {
+            deepdiveCode.style.opacity = '0';
+            setTimeout(() => {
+              deepdiveCode.textContent = stageInfo.detail;
+              deepdiveCode.style.opacity = '1';
+            }, 100);
+          }
         }
       });
-    }
+    });
 
-    // Refresh / Run Query Button
+    // Refresh / Run Pipeline Button
     if (mockupRefreshBtn) {
       mockupRefreshBtn.addEventListener('click', () => {
         const refreshIcon = mockupRefreshBtn.querySelector('.refresh-icon');
         if (refreshIcon) refreshIcon.classList.add('is-spinning');
-        if (mockupStatusText) mockupStatusText.textContent = 'Executing Query...';
+        if (mockupStatusText) mockupStatusText.textContent = 'Running Pipeline...';
+
+        // Animate sequential stage highlight
+        pipelineNodes.forEach((n, idx) => {
+          setTimeout(() => {
+            pipelineNodes.forEach(other => other.classList.remove('highlighted'));
+            n.classList.add('highlighted');
+            currentActiveStage = idx + 1;
+            const curData = DECK_PROJECTS[currentProjKey];
+            if (curData && curData.stages[idx]) {
+              if (deepdiveIcon) deepdiveIcon.textContent = curData.stages[idx].icon;
+              if (deepdiveCode) deepdiveCode.textContent = curData.stages[idx].detail;
+            }
+          }, idx * 250);
+        });
 
         setTimeout(() => {
           if (refreshIcon) refreshIcon.classList.remove('is-spinning');
-          loadModel(currentModelKey);
-          if (mockupStatusText) mockupStatusText.textContent = 'Refreshed (14ms)';
-          if (modelRefreshInfo) modelRefreshInfo.textContent = 'Model in-memory cache updated';
+          const curData = DECK_PROJECTS[currentProjKey];
+          if (mockupStatusText && curData) mockupStatusText.textContent = 'Synced (12.4ms)';
           setTimeout(() => {
-            const currentData = MOCKUP_MODELS[currentModelKey];
-            if (mockupStatusText && currentData) mockupStatusText.textContent = currentData.statusText;
-          }, 2400);
-        }, 400);
+            if (mockupStatusText && curData) mockupStatusText.textContent = curData.statusText;
+          }, 2000);
+        }, 1200);
       });
     }
 
-    // Interactive KPI Card click highlight
-    metricCards.forEach((card, idx) => {
-      card.addEventListener('click', () => {
-        metricCards.forEach(c => c.classList.remove('active-kpi-card'));
-        card.classList.add('active-kpi-card');
-
-        if (mockupPolyline1 && mockupPolyline2) {
-          if (idx === 0 || idx === 1) {
-            mockupPolyline1.classList.add('is-focused');
-            mockupPolyline2.classList.remove('is-focused');
-          } else {
-            mockupPolyline2.classList.add('is-focused');
-            mockupPolyline1.classList.remove('is-focused');
-          }
-          setTimeout(() => {
-            mockupPolyline1.classList.remove('is-focused');
-            mockupPolyline2.classList.remove('is-focused');
-          }, 2500);
-        }
-      });
-    });
-
-    // Chart Crosshair Scanner & Dynamic Hover Tooltip
-    if (svgChartContainer && chartTooltipBadge && chartCrosshair && activeScanPoint) {
-      svgChartContainer.addEventListener('mousemove', (e) => {
-        const rect = svgChartContainer.getBoundingClientRect();
-        const mouseX = e.clientX - rect.left;
-        const relativeX = (mouseX / rect.width) * 500; // Map to SVG viewBox (0-500)
-
-        const currentPoints = MOCKUP_MODELS[currentModelKey].chart.points;
-        if (!currentPoints || currentPoints.length === 0) return;
-
-        // Find nearest point
-        let nearest = currentPoints[0];
-        let minDist = Math.abs(currentPoints[0].cx - relativeX);
-        for (let i = 1; i < currentPoints.length; i++) {
-          const dist = Math.abs(currentPoints[i].cx - relativeX);
-          if (dist < minDist) {
-            minDist = dist;
-            nearest = currentPoints[i];
-          }
-        }
-
-        // Position crosshair
-        chartCrosshair.setAttribute('x1', relativeX);
-        chartCrosshair.setAttribute('x2', relativeX);
-        chartCrosshair.style.opacity = '1';
-
-        // Position active snap circle
-        activeScanPoint.setAttribute('cx', nearest.cx);
-        activeScanPoint.setAttribute('cy', nearest.cy);
-        activeScanPoint.style.opacity = '1';
-
-        // Show Tooltip
-        const curData = MOCKUP_MODELS[currentModelKey];
-        chartTooltipBadge.innerHTML = `<strong>${nearest.month}</strong> &bull; <span style="color:#06b6d4;">${curData.chart.legend1}:</span> ${nearest.val1} &bull; <span style="color:#f59e0b;">${curData.chart.legend2}:</span> ${nearest.val2}`;
-        
-        // Clamp tooltip position inside container
-        const leftPercent = Math.min(Math.max((mouseX / rect.width) * 100, 15), 85);
-        chartTooltipBadge.style.left = `${leftPercent}%`;
-        chartTooltipBadge.style.top = `${Math.max((nearest.cy / 140) * rect.height - 12, 10)}px`;
-        chartTooltipBadge.classList.add('is-visible');
-      });
-
-      svgChartContainer.addEventListener('mouseleave', () => {
-        chartCrosshair.style.opacity = '0';
-        activeScanPoint.style.opacity = '0';
-        chartTooltipBadge.classList.remove('is-visible');
-      });
-    }
-
-    // Mac Window Controls Dots
+    // Window Controls Dots
     const dotRed = dashboardMockup.querySelector('.mockup-dots .dot-red');
     const dotYellow = dashboardMockup.querySelector('.mockup-dots .dot-yellow');
     const dotGreen = dashboardMockup.querySelector('.mockup-dots .dot-green');
 
     if (dotRed) {
       dotRed.addEventListener('click', () => {
-        // Reset to first model
-        const firstTab = document.querySelector('.model-tab-btn[data-model="ecommerce"]');
-        if (firstTab) firstTab.click();
-        dashboardMockup.classList.remove('compact-view');
+        const logBtn = document.getElementById('projBtnLogistics');
+        if (logBtn) logBtn.click();
       });
     }
 
@@ -1036,6 +950,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (mockupRefreshBtn) mockupRefreshBtn.click();
       });
     }
+
+    // Initialize with default project
+    loadProject('logistics');
   }
 
   /* ==========================================================================
